@@ -3,3 +3,23 @@
 	margin: 0;   /*Nullstiller browser default settinger  */
 	padding: 0;
 }
+
+
+
+.wrapper-grid{
+
+ 	display: grid;
+	grid-template-columns: ;
+	grid-template-rows: ;
+
+	grid-template-areas: ;
+	
+
+}
+
+
+
+
+.main-nav {
+	
+}

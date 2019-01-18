@@ -1,12 +1,10 @@
 
 
-	<div class="bunn">
   
-  		<hr/>
-  		<h3>Footer</h3>
-
-	</div>
-
+  <footer>
+    <hr/>
+    <p>Exzist, copyright &copy; 2019</p>
+  </footer>
 </div>
 <!-- wrapper slutter -->
 

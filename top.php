@@ -11,6 +11,7 @@
 <body>
 	<div class="nav">
 			<img src="Bilder/Navmeny.png">
+			<h1 id="Menutxt">Menu</h1>
 	</div>
 </body>
 		

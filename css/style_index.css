@@ -5,10 +5,12 @@
 	margin: 0;
 	padding: 0;  /* Nullstiller browser */
 }
+/*Setter max width og height for for hele vinduet til mobil*/
 body{
 	width: 414px;
 	height: 736px;
 }
+/*Navbaren på toppen*/
 .nav{
 	width: 414px;
 	height: 56px;
@@ -17,10 +19,42 @@ body{
 img:nth-of-type(1){
 	margin-top: 15px;
 	margin-left: 10px;
+	float: left;
 }
+#Menutxt{
+	color: white;
+	float: left;
+	font-size: 19px;
+	margin-top: 17px;
+}
+/*Innholdet på siden*/
 .content{
-	height: 535px;
+	height: 700px;
 	width: 414px;
-	background-color: #707070;
-
+	background-color: white;
+}
+.salebox{
+	height: 130px;
+	width: 330px;
+	background-color: black;
+	margin-left: 42px;
+	margin-right: 42px;
+	margin-top: 20px;
+}
+.leftbox{
+	height: 130px;
+	width: 155px;
+	background-color: black;
+	margin-top: 20px;
+	margin-left: 42px;
+	float: left;
+}
+.rightbox{
+	height: 130px;
+	width: 155px;
+	background-color: black;
+	margin-top: 20px;
+	margin-right: 42px;
+	margin-left: 20px;
+	float: left;
 }

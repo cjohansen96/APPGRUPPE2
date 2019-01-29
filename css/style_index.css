@@ -9,4 +9,18 @@ body{
 	width: 414px;
 	height: 736px;
 }
+.nav{
+	width: 414px;
+	height: 56px;
+	background-color: #000000;
+}
+img:nth-of-type(1){
+	margin-top: 15px;
+	margin-left: 10px;
+}
+.content{
+	height: 535px;
+	width: 414px;
+	background-color: #707070;
 
+}

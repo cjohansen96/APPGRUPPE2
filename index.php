@@ -6,7 +6,9 @@
 	 <!-- Top --> 
 <header class="masthead">
   
-  
+<div class="content">
+	
+</div>
 
 
 

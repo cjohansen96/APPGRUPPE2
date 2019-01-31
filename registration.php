@@ -13,48 +13,42 @@
 	<div class="container">
 		
 		<div class="grid">
+
 			
 			<section class="section-1">
+
 				<div class="brand">
 					<img src="#" alt="">
 				</div>
 				<h1>Sign Up</h1>
-				<p>Already have an account?</p>
-				<div class="logIn-link">
-					<a href="">Log In here ></a>
-				</div>
+				<p>Already have an account? <a href="index.php">Click Here ></a></p>	
 			</section>
-
+			
 			<section class="section-2">
 				<h4>Fill Out Form</h4>
 				<form action="includes/registration.inc.php" method="post">
 					<p>
-						<label>First name</label>
-						<input type="text" name="name">
+						<input type="text" name="name" placeholder="First name">
 					</p>
 					<p>
-						<label>Last name</label>
-						<input type="text" name="lname">
+						<input type="text" name="lname" placeholder="Last name">
 					</p>
 					<p>
-						<label>Email</label>
-						<input type="text" name="mail">
+						<input type="text" name="mail" placeholder="Email">
 					</p>
 					<p>
-						<label>Phone number</label>
-						<input type="text" name="tlf">
+						<input type="text" name="tlf" placeholder="Phone number">
 					</p>
 					<p>
-						<label>Password</label>
-						<input type="password" name="pwd">
+						<input type="password" name="pwd" placeholder="Password">
 					</p>
 					<p>
-						<label>Confirm Password</label>
-						<input type="password" name="pwd-repeat">
+						<input type="password" name="pwd-repeat" placeholder="Confirm Password">
 					</p>
 					
 					<p class="btn">
 						<button type="submit" name="reg-submit">Submit</button>
+
 					</p>
 				</form>
 			</section>

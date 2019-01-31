@@ -27,34 +27,34 @@
 
 			<section class="section-2">
 				<h4>Fill Out Form</h4>
-				<form action="">
+				<form action="includes/registration.inc.php" method="post">
 					<p>
 						<label>First name</label>
-						<input type="text" name="First name">
+						<input type="text" name="name">
 					</p>
 					<p>
 						<label>Last name</label>
-						<input type="text" name="Last name">
+						<input type="text" name="lname">
 					</p>
 					<p>
 						<label>Email</label>
-						<input type="text" name="E-mail">
+						<input type="text" name="mail">
 					</p>
 					<p>
 						<label>Phone number</label>
-						<input type="text" name="Phone">
+						<input type="text" name="tlf">
 					</p>
 					<p>
 						<label>Password</label>
-						<input type="text" name="Password">
+						<input type="password" name="pwd">
 					</p>
 					<p>
 						<label>Confirm Password</label>
-						<input type="text" name="Confirm-passwrod">
+						<input type="password" name="pwd-repeat">
 					</p>
 					
 					<p class="btn">
-						<button>Submit</button>
+						<button type="submit" name="reg-submit">Submit</button>
 					</p>
 				</form>
 			</section>

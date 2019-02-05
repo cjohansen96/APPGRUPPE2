@@ -1,4 +1,8 @@
+<?php
+	session_start();
 
+	require "includes/dbh.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,15 +24,15 @@
 			</section>
 
 			<section class="section-2">
-				<form action="#" method="post">
+				<form action="includes/login.inc.php" method="post">
 					<p>
 						<input type="text" name="mail" placeholder="E-mail">
 					</p>
 					<p>
-						<input type="password" name="password" placeholder="Password">
+						<input type="password" name="pwd" placeholder="Password">
 					</p>
 					<p class="btn">
-						<button type="LogIn" name="Login">LogIn</button>
+						<button type="submit" name="login-submit">LogIn</button>
 					</p>
 				</form>
 			<p class="last-p">
@@ -38,6 +42,15 @@
 			<section class="footer">
 				
 				<!-- Whitespace  -->
+				<!-- Bare test for å se om bruker får logget inn -->
+          	<?php
+          		if (!isset($_SESSION['email'])) {
+            		echo '<p>You are logged out!</p>';
+          		}
+          		else if (isset($_SESSION['email'])) {
+            		echo '<p>You are logged in!</p>';
+          		}
+          	?>
 			
 			</section>
 		</div>

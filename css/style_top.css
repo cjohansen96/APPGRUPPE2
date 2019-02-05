@@ -1,0 +1,35 @@
+/*kun skalert for mobil nå*/
+/*header/nav*/
+*{
+  margin: 0;
+  padding: 0;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 5% 5% 90%;
+  grid-template-rows: 1fr;
+  background-color: black;
+  height: 56px;
+  margin-bottom: 20px;
+}
+/*manyen*/
+.item1{
+  align-self: center;
+}
+/*teksten*/
+.item2{
+  color: white;
+  font-size: 9.5px;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  align-self: center;
+}
+
+@media screen and (max-width: 430px){
+
+}
+
+@media(min-width:745px){
+
+
+}

@@ -12,7 +12,7 @@
 
 	<div class="container">
 		
-		<div class="grid">
+		<div class="box">
 
 			
 			<section class="section-1">
@@ -21,7 +21,7 @@
 					<img src="#" alt="">
 				</div>
 				<h1>Sign Up</h1>
-				<p>Already have an account? <a href="index.php">Click Here ></a></p>	
+				<p>Already have an account? <a href="login.php">Login Here ></a></p>	
 			</section>
 			
 			<section class="section-2">
@@ -45,12 +45,23 @@
 					<p>
 						<input type="password" name="pwd-repeat" placeholder="Confirm Password">
 					</p>
+
+					<p>
+					<input type="checkbox" name="checkbox" value="check" id="agree">
+					</p>
+					
+					<p class="check"> I have read and agree to the Terms and<br> Conditions and Privacy Policy</p>
+					
 					
 					<p class="btn">
 						<button type="submit" name="reg-submit">Submit</button>
 
 					</p>
 				</form>
+			</section>
+			<section class="footer">
+
+				<!-- Whitespace -->
 			</section>
 		
 

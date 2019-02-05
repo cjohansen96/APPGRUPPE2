@@ -1,9 +1,8 @@
 
 
 *{
-	box-sizing: border-box;
+	box-sizing: border-box;	
 }
-
 body{
 	background: #f2f2f2;
 	color:#0d0d0d;
@@ -15,104 +14,106 @@ body{
 
 .container{
 	max-width: 1170px;
-	margin-left:auto;
-	margin-right:auto;
 	padding:1em;
 
 }
-
-/* Bilde
-.brand{    
-
-}
-*/
-
 .box{
 	box-shadow:  0 0 20px 0 rgba(13, 13, 13);
 
 }
-
-
 
 .section-1{
 	background:#0d0d0d;
 	color:#ffffff;
 	
 }
-.section-1 h1,.section-2 h4{
+.section-1 h1{
 	text-align: center;
 	margin:0px;
+	padding: 5px;
 	font-family: Helvetica,Arial, sans-serif;
 }
 .section-1 p{
-	padding: 1em;
+	padding: 1.5em;
 	text-align: center;
 }
-a {
+
+.SignUp-link  {
 	color: #ff751a;
 	font-size: 15px;
 
+
 }
-a:visited{
+.SignUp-link:visited{
 	color: #ff751a;
 }
 
-a:hover {
+.SignUp-link:hover {
 	color:#e65c00;
 
 }
-
 
 /* Form */
 
 .section-2 form{
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-column: 1/2;
+	grid-column: 2/3;
 	text-align: center;
+	width: 100%;
+	
 	
 
 }
-.section-2 form p input{
-	text-align: center;
-	color:black;
-	
-
+.section-2 {
+	text-align:center;
 }
-
-input[type=checkbox] {
-  transform: scale(1.5);
-}
-.check{
-	padding:0;
-	margin:0;
-}
-
 .btn button{
 
 	background:#ff751a;
 	color:#0d0d0d;
 	border:0;
-	padding:7px;
+	margin:8px 0 0 0;
+	padding:5px;
 	font-family: Helvetica,Arial, sans-serif;
 	font-size: 15px;
 	border-radius: 4px;
 	letter-spacing: 1px;
 	margin: 1em 0 0 0;
 	font-weight: bold;
+	width:175px;
 }
-
-
 .section-2 form button:hover{
 	background:#e65c00;
 	
 }
 
 
+.last-p{
+	margin:0px;
+	padding: 0px 0px 1em 0px;
+}
+
+.forgot-link{
+	color: #0d0d0d;
+	font-size: 15px;
+	
+
+}
+
+
+.forgot-link:hover {
+	color:#e65c00;
+
+}
+
 .footer {
 	background: #ffffff;
-	padding: 35px;
+	padding: 50px;
 }
+
+
+
 
 
 /* minste mobil */
@@ -141,12 +142,9 @@ body{
 
 }
 
-
-
 /* Stort vindu */
 
 @media(min-width:745px){
 
 
 }
-

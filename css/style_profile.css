@@ -1,0 +1,24 @@
+/*content normal size*/
+*{
+	box-sizing: border-box;
+}
+body{
+	background: #f2f2f2;
+	color:#0d0d0d;
+	line-height: 1.4;
+	font-family: 'Segoe UI',Geneva,Verdana,sans-serif;
+}	
+
+.content{
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas:
+	". card card card card ."
+	". card1 card1 card2 card2 ."
+	". card3 card3 card4 card4 .";
+	background: #f2f2f2;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	padding: 3px;
+}

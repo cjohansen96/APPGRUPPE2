@@ -45,7 +45,7 @@ if (isset($_POST['reg-submit'])) {
   else {
 
     // Hvis brukeren ikke har gjort noen feil, så starter skritpet med å finne ut om email allerede er registrert.
-    // Bruker da prepared statments for å sikre sqlinjections.
+    // Bruker da prepared statments for å sikre at det ikke blir noen sqlinjections.
     $sql = "SELECT Email FROM Customer WHERE Email=?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {

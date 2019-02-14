@@ -7,7 +7,7 @@ if(isset($_POST['login-submit'])) {
 	$email = $_POST['mail'];
 	$password = $_POST['pwd'];
 
-	//Error handler. Sjekker om det tom inndata fra bruker
+	// Inndatavalidering. Sjekker om det tom inndata fra bruker
 	if (empty($email) || empty($password)) {
     	header("Location: ../login.php?error=emptyfields&mail".$email."&pwd=".$password);
     	exit();

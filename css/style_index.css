@@ -8,49 +8,51 @@ body{
 	color:#0d0d0d;
 	line-height: 1.4;
 	font-family: 'Segoe UI',Geneva,Verdana,sans-serif;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
 }	
 p{
 	color: white;
 }
-
 .content{
 	display: grid;
-	grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns:0.5fr 1fr 1fr 1fr 1fr 0.5fr;
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-template-areas:
-	". card card card card ."
+	"card card card card card card"
 	". card1 card1 card2 card2 ."
 	". card3 card3 card4 card4 .";
 	background: #f2f2f2;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
-	padding: 3px;
 }
 .card{
 	grid-area: card;
 	background-color: black;
-	height: 200px;
+	height: 400px;
 }
 .card1{
 	grid-area: card1;
 	background-color: black;
-	height: 200px;
+	height: 400px;
 
 }
 .card2{
 	grid-area: card2;
 	background-color: black;
-	height: 200px;
+	height: 400px;
 }
 .card3{
 	grid-area: card3;
 	background-color: black;
-	height: 200px;
+	height: 400px;
 }
 .card4{
 	grid-area: card4;
 	background-color: black;
-	height: 200px;
+	height: 400px;
 }
 /* mobile size*/
 @media screen and (max-width: 430px){

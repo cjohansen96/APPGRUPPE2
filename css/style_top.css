@@ -4,20 +4,20 @@
 }
 
 body{
+  margin-top: 0px;
+  padding-top: 0px;
   background: #f2f2f2;
   color:#0d0d0d;
   line-height: 1.4;
   font-family: 'Segoe UI',Geneva,Verdana,sans-serif;
-  padding: 3px;
 
 }
 .grid{
   display: grid;
-  grid-template-columns: 5% 5% 90%;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   background-color: black;
   height: 56px;
-  margin-bottom: 20px;
 }
 /*menu*/
 .item1{
@@ -45,6 +45,33 @@ body{
 }
 
 @media(min-width:745px){
+.grid{
+  display: grid;
+  grid-template-columns: 10% 10% 10% 70%;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "item1 item2 item3 item4";
+  height: 100px;
+}
+.item1{
+  align-self: center;
+  display: none;
+}
+.item2{
+  align-self: center;
+}
 
+.item3{
+  align-self: center;
+}
+
+.item4{
+  align-self: center;
+}
+
+h1{
+  color: white;
+
+}
 
 }

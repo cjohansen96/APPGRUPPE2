@@ -13,9 +13,6 @@
 		<div class="item1">
 			<img src="Bilder/Navmeny.png">
 		</div>
-		<div class="item2">
-			<h1>Menu</h1>
-		</div>
 	</div>
 </body>
 

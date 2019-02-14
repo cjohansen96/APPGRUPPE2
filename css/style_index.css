@@ -1,18 +1,81 @@
-/*kun skalert for mobil nå*/
-/*Innholdet på siden*/
+
+/*content normal size*/
 *{
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background: #f2f2f2;
+	color:#0d0d0d;
+	line-height: 1.4;
+	font-family: 'Segoe UI',Geneva,Verdana,sans-serif;
+}	
+p{
+	color: white;
+}
+
+.content{
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas:
+	". card card card card ."
+	". card1 card1 card2 card2 ."
+	". card3 card3 card4 card4 .";
+	background: #f2f2f2;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	padding: 3px;
+}
+.card{
+	grid-area: card;
+	background-color: black;
+	height: 200px;
+}
+.card1{
+	grid-area: card1;
+	background-color: black;
+	height: 200px;
+
+}
+.card2{
+	grid-area: card2;
+	background-color: black;
+	height: 200px;
+}
+.card3{
+	grid-area: card3;
+	background-color: black;
+	height: 200px;
+}
+.card4{
+	grid-area: card4;
+	background-color: black;
+	height: 200px;
+}
+/* mobile size*/
+@media screen and (max-width: 430px){
+	*{
+	box-sizing: border-box;
+}
+body{
+	background: #f2f2f2;
+	color:#0d0d0d;
+	line-height: 1.4;
+	font-family: 'Segoe UI',Geneva,Verdana,sans-serif;
+
+
 }
 .content{
 	display: grid;
-	grid-template-columns:1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns:1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas:
-	". card card ."
-	". card1 card2 ."
-	". card3 card4 .";
-	background-color: white;
+	". card ."
+	". card1 ."
+	". card2 ."
+	". card3 ."
+	". card4 .";
+	background: #f2f2f2;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 }
@@ -26,29 +89,26 @@
 	grid-area: card1;
 	background-color: black;
 	height: 130px;
-	width: 155px;
+	width: 330px;
 }
 .card2{
 	grid-area: card2;
 	background-color: black;
 	height: 130px;
-	width: 155px;
+	width: 330px;
 }
 .card3{
 	grid-area: card3;
 	background-color: black;
 	height: 130px;
-	width: 155px;
+	width: 330px;
 }
 .card4{
 	grid-area: card4;
 	background-color: black;
 	height: 130px;
-	width: 155px;
+	width: 330px;
 }
-
-@media screen and (max-width: 430px){
-
 }
 
 @media(min-width:745px){

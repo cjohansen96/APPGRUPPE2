@@ -9,27 +9,12 @@
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style_profile.css">
+<?php
+	include 'top.php';
+?>
 	<title></title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">EXIZT</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">MENS</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">WOMAN</a>
-      </li>   
-    </ul>
-  </div>  
-</nav>
-<br>
-
 <!-- Content for the profile -->
 <div class="container contentbox"> <br>
 	<h2 class="text-center">MY PROFILE</h3>

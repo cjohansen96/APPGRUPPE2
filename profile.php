@@ -1,57 +1,63 @@
-<?php
+<?php 
 	session_start();
+	require 'includes/dbh.inc.php';
 
-	require "includes/dbh.inc.php";
+	if(!isset($_SESSION['email'])){
+		header("location: ../index.php");
+		exit();
+	}
 
-        if (!isset($_SESSION['email'])) {
-			header("Location: ../index.php");
-            exit();
-        }
-        else if (isset($_SESSION['email'])) {
-			$userId = $_SESSION['Email'];
-			$sqlName = "SELECT First_name FROM Customer WHERE Email = 'christofferjohansen12@gmail.com'";
-			$result = mysqli_query($conn, $sqlName);
 
-        } 		
+	$userArray = array();
+	$id = $_SESSION['email'];
+	$sql = "SELECT * FROM Customer WHERE Email ='".$id."'";
+	$result = mysqli_query($conn, $sql);
+	$resultCheck = mysqli_num_rows($result);
+
+	if ($resultCheck > 0) {
+		while ($row = mysqli_fetch_assoc($result)) {
+			$userArray['First_Name'] = $row['First_Name'];
+			$userArray['Last_Name'] = $row['Last_Name'];
+			$userArray['Email'] = $row['Email'];
+			$userArray['Phone'] = $row['Phone'];
+		}
+	}
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style_profile.css">
-<?php
-	include 'top.php';
-?>
+
 	<title></title>
 </head>
 <body>
+<?php
+	require 'top.php';
+?>
 <!-- Content for the profile -->
 <div class="container contentbox"> <br>
-	<h2 class="text-center">MY PROFILE</h3>
+	<h2 class="text-center"> MY PROFILE </h2>
 		<br>
 
 	<div class="row">
 		<div class="col-sm text-center">
 			<p class="profiletxt">Name:</p>
-			<?php
-				if ($result->num_rows > 0) {
-    				// output data of each row
-    				while($row = $result->fetch_assoc()) {
-						echo "Name:".$row[First_name];
-					}
-				}
-			?>
+			<?php echo $userArray['First_Name'] . " " . $userArray['Last_Name'];  ?>
 		</div>
 
 		<div class="col-sm text-center">
 			<p class="profiletxt">Email:</p>
-			<p>negro@gmail.com</p>
+			<?php echo $userArray['Email']; ?>
 		</div>
 
 		<div class="col-sm text-center">
 			<p class="profiletxt">Tlf:</p>
-			<p>13371337</p>
+			<?php echo $userArray['Phone']; ?>
 			<br> <br>
 		</div>
 
@@ -114,18 +120,6 @@
 				</form>
 		</div>
 
-
-
-</div>
-	
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	</div>
 </body>
 </html>

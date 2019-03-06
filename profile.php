@@ -2,6 +2,17 @@
 	session_start();
 
 	require "includes/dbh.inc.php";
+
+        if (!isset($_SESSION['email'])) {
+			header("Location: ../index.php");
+            exit();
+        }
+        else if (isset($_SESSION['email'])) {
+			$userId = $_SESSION['Email'];
+			$sqlName = "SELECT First_name FROM Customer WHERE Email = 'christofferjohansen12@gmail.com'";
+			$result = mysqli_query($conn, $sqlName);
+
+        } 		
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +30,18 @@
 <div class="container contentbox"> <br>
 	<h2 class="text-center">MY PROFILE</h3>
 		<br>
+
 	<div class="row">
 		<div class="col-sm text-center">
 			<p class="profiletxt">Name:</p>
-			<p>Negro negros</p>
+			<?php
+				if ($result->num_rows > 0) {
+    				// output data of each row
+    				while($row = $result->fetch_assoc()) {
+						echo "Name:".$row[First_name];
+					}
+				}
+			?>
 		</div>
 
 		<div class="col-sm text-center">

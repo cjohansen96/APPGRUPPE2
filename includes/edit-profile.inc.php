@@ -41,7 +41,6 @@ if(isset($_POST['edit-submit'])) {
 
 
 
-
 }
 else {
 	header("Location: ../profile.php");

@@ -44,14 +44,14 @@
 
   <button type="button" class="btn btn-default"> <span class="fas fa-user"></span> LOGIN</button>
 
+  <!-- Button for my prifle after logging in
+  <button type="button" class="btn btn-default"> <span class="fas fa-user"></span> My profile</button>
+-->
+
   <button type="button" class="btn btn-default"> <span class="fas fa-shopping-cart"></span> </button>
 
 </div>
 </nav>
-
-
-
-
 
 </body>
 </html>

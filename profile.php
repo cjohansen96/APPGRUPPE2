@@ -2,15 +2,15 @@
 	session_start();
 	require 'includes/dbh.inc.php';
 
-	if(!isset($_SESSION['email'])){
+	if(!isset($_SESSION['customerId'])){
 		header("location: ../index.php");
 		exit();
 	}
 
-
 	$userArray = array();
-	$id = $_SESSION['email'];
-	$sql = "SELECT * FROM Customer WHERE Email ='".$id."'";
+
+	$id = $_SESSION['customerId'];
+	$sql = "SELECT * FROM Customer WHERE IdCustomer ='$id'";
 	$result = mysqli_query($conn, $sql);
 	$resultCheck = mysqli_num_rows($result);
 
@@ -75,20 +75,20 @@
 	</div>
 <!-- Collapse form for editing profile -->
 		<div class="collapse" id="editProfile">
-				<form action="includes/edit-profile.inc.php" class="text-center">
+				<form action="includes/edit-profile.inc.php" class="text-center" method="POST">
 				   <label>First name:</label> <br>
-				   <input type="text" name="name"> <br>
+				   <input type="text" name="name" value="<?php echo $userArray['First_Name'];?>"> <br>
 
 				   <label>Last name:</label> <br>
-				   <input type="text" name="lname"> <br>
+				   <input type="text" name="lname" value="<?php echo $userArray['Last_Name'];?>">  <br>
 
 				   <label>Email:</label> <br>
-				   <input type="text" name="mail"> <br>
+				   <input type="text" name="mail" value="<?php echo $userArray['Email'];?>"> <br>
 
 				   <label>Tlf:</label> <br>
-				   <input type="text" name="tlf"> <br> <br>
+				   <input type="text" name="tlf" value="<?php echo $userArray['Phone'];?>"> <br> <br>
 
-				   <button type="button" class="btn btn-secondary editbtn" name="save-submit">Save
+				   <button type="submit" class="btn btn-secondary editbtn" name="save-submit">Save
 				   </button> <br> <br>
 				</form>
 		</div>
@@ -109,13 +109,13 @@
 
 	<!-- Collapse form for editing profile -->
 		<div class="collapse" id="editPassword">
-				<form action="includes/edit-pwd-inc.php" class="text-center">
+				<form action="includes/edit-pwd.inc.php" class="text-center" method="POST">
 				   <label>New password:</label> <br>
 				   <input type="password" name="pwd"> <br>
 				   <label>Repeat new password:</label> <br>
 				   <input type="password" name="pwd-repeat"> <br> <br>
 
-				   <button type="button" class="btn btn-secondary editbtn" name="pwd-submit">Save
+				   <button type="submit" class="btn btn-secondary editbtn" name="pwd-submit">Save
 				   </button> <br> <br>
 				</form>
 		</div>

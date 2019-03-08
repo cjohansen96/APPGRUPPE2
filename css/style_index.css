@@ -2,16 +2,15 @@
 img{
 	max-width: 100%;
 	height: auto;
+}
+#nooutline{
+	outline: none; 
+	border: none; 
+	border-style: none;
 } 
 
-
 @media (max-width: 767px){
-	#omegalul{
-		padding-right: 0px;
-		padding-left: 0px;
-		margin-left: 0px;
-		margin-right: 0px;
-	}
+
 	.carousel-caption{
 		font-size: 10px;
 	}

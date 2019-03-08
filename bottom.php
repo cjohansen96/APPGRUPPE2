@@ -48,16 +48,13 @@
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Contact</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">News</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Home</a>
               </li>
             </ul>
 
@@ -66,7 +63,7 @@
     </div>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="#"> Exizt.com</a>
+      <a href="#"> Exiztfashion.com</a>
     </div>
   </footer>
 

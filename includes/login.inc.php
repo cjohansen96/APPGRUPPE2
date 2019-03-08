@@ -38,7 +38,8 @@ if(isset($_POST['login-submit'])) {
         			session_start();
 
         			$_SESSION['email'] = $row['Email'];
-        			
+                    $_SESSION['customerId'] = $row['IdCustomer'];  
+                           			
         			header("Location: ../login.php?login=success");
         			exit();
         		}

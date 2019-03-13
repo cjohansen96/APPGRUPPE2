@@ -41,7 +41,7 @@
 ?>
 <!-- Content for the profile -->
 <div class="container contentbox"> <br>
-	<h2 class="text-center"> MY PROFILE </h2>
+	<h2 class="text-center" style="color: black;"> MY PROFILE </h2>
 		<br>
 
 	<div class="row">

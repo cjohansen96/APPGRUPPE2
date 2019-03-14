@@ -56,7 +56,7 @@
   </form>
 </div>
 
-<button type="button" class="btn btn-default"> <span class="fas fa-user"></span> LOGIN</button>
+<button type="button"  href="" class="btn btn-default" data-toggle="modal" data-target="#modalLoginForm"> <span class="fas fa-user"></span> LOGIN</button>
 
   <!-- Button for my prifle after logging in
   <button type="button" class="btn btn-default"> <span class="fas fa-user"></span> My profile</button>

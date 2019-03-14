@@ -3,6 +3,7 @@
 
 <?php
 require 'top.php';
+require 'modal.php';
 ?>  
 
 <head>

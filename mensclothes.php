@@ -12,10 +12,10 @@ require 'top.php';
 ?>
 
 <body>
-	<!-- Filter options -->
 	<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
 		<div class="row">
-			<div class="col-md-2 dropdown">
+			<!-- Filter options -->
+			<div class="col-md-3 col-sm-12">
 				<h1><span class="fas fa-sliders-h" style="font-size: 0.9em;"></span>Filter</h1>
 				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
 					<option>Category</option>
@@ -30,7 +30,9 @@ require 'top.php';
 					<option>The hundreds</option>
 				</select>
 				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
-					<option>Price</option>	
+					<option>Price</option>
+					<option>Low-high</option>
+					<option>High-low</option>	
 				</select>
 				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
 					<option>Color</option>
@@ -44,104 +46,266 @@ require 'top.php';
 					<option>M</option>
 					<option>L</option>
 				</select>
-			</div>
-			<!-- cards for clothes -->
-			<div class="col-md-3">
-				<div class="card shadow" style="width: 20rem; height: 500px; margin-bottom: 20px;">
-					<div class="inner">
-						<img class="card-img-top" src="Bilder/clothes/3.png" alt="Card image cap">
-					</div>
-					<div class="card-body text-center">
-						<h5 class="card-title">T-shirt</h5>
-						<p class="card-text">Exizt T-shirt with logo</p>
-						<a href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-						<h3>20£</h3>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card shadow" style="width: 20rem; height: 500px; margin-bottom: 20px;">
-					<div class="inner">
-						<img class="card-img-top" src="Bilder/clothes/3.png" alt="Card image cap">
-					</div>
-					<div class="card-body text-center">
-						<h5 class="card-title">Exizt T-shirt</h5>
-						<p class="card-text">Exizt T-shirt with logo</p>
-						<a href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-						<h3>20£</h3>
+			</div>			
+			<!-- Clothing cards -->
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="card shadow" style="width: 20rem; height: 500px; margin-bottom: 20px;">
-					<div class="inner">
-						<img class="card-img-top" src="Bilder/clothes/3.png" alt="Card image cap">
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
 					</div>
-					<div class="card-body text-center">
-						<h5 class="card-title">T-shirt</h5>
-						<p class="card-text">Exizt T-shirt with logo</p>
-						<a href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-						<h3>20£</h3>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-3">
-				<div class="card shadow" style="width: 20rem; height: 500px;margin-bottom: 20px;">
-					<div class="inner">
-						<img class="card-img-top" src="Bilder/clothes/3.png" alt="Card image cap">
-					</div>
-					<div class="card-body text-center">
-						<h5 class="card-title">T-shirt</h5>
-						<p class="card-text">Exizt T-shirt with logo</p>
-						<a href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-						<h3>20£</h3>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card shadow" style="width: 20rem; height: 500px; margin-bottom: 20px;">
-					<div class="inner">
-						<img class="card-img-top" src="Bilder/clothes/3.png" alt="Card image cap">
-					</div>
-					<div class="card-body text-center">
-						<h5 class="card-title">Exizt T-shirt</h5>
-						<p class="card-text">Exizt T-shirt with logo</p>
-						<a href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-						<h3>20£</h3>
+			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+				<div class="card shadow text-center">
+					<div class="card-block">
+						<img src="Bilder/clothes/3.png" alt="" class="img-fluid">
+						<div class="card-title">
+							<h4>T-shirt</h4>
+						</div>
+						<div class="card-text">
+							Black Exizt Tee with logo
+						</div>
+						<a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+						<div class="card-text">
+							<h3>15£</h3>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="card shadow" style="width: 20rem; height: 500px;margin-bottom: 20px;">
-					<div class="inner">
-						<img class="card-img-top" src="Bilder/clothes/3.png" alt="Card image cap">
-					</div>
-					<div class="card-body text-center">
-						<h5 class="card-title">T-shirt</h5>
-						<p class="card-text">Exizt T-shirt with logo</p>
-						<a href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-						<h3>20£</h3>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card shadow" style="width: 20rem; height: 500px;margin-bottom: 20px;">
-					<div class="inner">
-						<img class="card-img-top" src="Bilder/clothes/3.png" alt="Card image cap">
-					</div>
-					<div class="card-body text-center">
-						<h5 class="card-title">T-shirt</h5>
-						<p class="card-text">Exizt T-shirt with logo</p>
-						<a href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-						<h3>20£</h3>
-					</div>
-				</div>
-			</div>
-
 		</div>
 	</div>
-
 </body>
 
 <?php

@@ -13,49 +13,56 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark navbarbgclr">
-  <div class="container-fluid">
-  <a href="#" class="navbar-brand"><img src="Bilder/Exizt-logo-sm.png" style="width: 120px; height: auto;"></a>
+  <nav class="navbar navbar-expand-md navbar-dark navbarbgclr">
+    <div class="container-fluid">
+      <a href="index.php" class="navbar-brand"><img src="Bilder/Exizt-logo-sm.png" style="width: 120px; height: auto;"></a>
 
-  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
-    <span class="navbar-toggler-icon ml-auto"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav">
-    
-    <li class="dropdown" style="padding-right: 10px;">
-      <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2>MEN </h2></a>
-      <ul class="dropdown-menu text-center navbarbgclr">
-        <li><a href="mensclothes.php">T-shirts</a></li>
-        <li><a href="#">Sweaters</a></li>
-        <li><a href="#">Jeans</a></li>
-      </ul>
-    </li> 
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon ml-auto"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          
+          <li class="dropdown" style="padding-right: 10px;">
+            <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2>MEN </h2></a>
+            <ul class="dropdown-menu text-center navbarbgclr">
+              <li><a href="mensclothes.php">T-shirts</a></li>
+              <li><a href="#">Sweaters</a></li>
+              <li><a href="#">Jeans</a></li>
+            </ul>
+          </li> 
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> WOMEN</h2></a>
+            <ul class="dropdown-menu text-center navbarbgclr">
+              <li><a href="#">T-shirts</a></li>
+              <li><a href="#">Sweaters</a></li>
+              <li><a href="#">Jeans</a></li>
+            </ul>
+          </li>
+    <!-- dropdown for cart and login for smaller screens
     <li class="dropdown">
-      <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> WOMEN</h2></a>
-      <ul class="dropdown-menu text-center navbarbgclr">
-        <li><a href="#">T-shirts</a></li>
-        <li><a href="#">Sweaters</a></li>
-        <li><a href="#">Jeans</a></li>
-      </ul>
+      <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> LOGIN</h2></a>
     </li>
-
-  </ul>
-  </div>
-      <div id="searchbar">
-      <form class="form-inline" action="/action_page.php">
+    <li class="dropdown" id="cartdd">
+      <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> CART</h2></a>
+    </li>
+  -->
+</ul>
+</div>
+<div id="searchbar">
+  <form class="form-inline" action="/action_page.php">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
     <button class="btn btn-default" type="submit"> <span class="fas fa-search"></span> </button>
   </form>
-  </div>
+</div>
 
-  <button type="button" class="btn btn-default"> <span class="fas fa-user"></span> LOGIN</button>
+<button type="button" class="btn btn-default"> <span class="fas fa-user"></span> LOGIN</button>
 
   <!-- Button for my prifle after logging in
   <button type="button" class="btn btn-default"> <span class="fas fa-user"></span> My profile</button>
 -->
 
-  <button type="button" class="btn btn-default"> <span class="fas fa-shopping-cart"></span> </button>
+<button type="button" class="btn btn-default"> <span class="fas fa-shopping-cart"></span> </button>
 
 </div>
 </nav>

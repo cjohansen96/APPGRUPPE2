@@ -3,11 +3,6 @@ img{
 	max-width: 100%;
 	height: auto;
 }
-#nooutline{
-	outline: none; 
-	border: none; 
-	border-style: none;
-} 
 
 @media (max-width: 767px){
 

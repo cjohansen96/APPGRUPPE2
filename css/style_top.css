@@ -10,9 +10,7 @@
 .navmargin{
 	margin-left: 20px;
 }
-.navborder{
-	border-bottom: 10px solid orange;
-}
+
 h2{
 	color: white;
 }
@@ -33,14 +31,10 @@ h2:hover{
 }
 
 
-@media (max-width: 700px){
+@media (max-width: 830px){
 	#searchbar{
 		display: none;
 	}
 	.btn-default{
 		display: none;
 	}
-
-
-}
-

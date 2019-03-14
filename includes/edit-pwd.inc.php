@@ -28,7 +28,7 @@ if (isset($_POST['pwd-submit'])) {
     	mysqli_stmt_bind_param($stmt, "s", $hashedPwd);
 
     	mysqli_stmt_execute($stmt);
-        header("Location: ../profile.php?registration=success");
+        header("Location: ../profile.php?passwordchange=success");
         exit();
     }
   }

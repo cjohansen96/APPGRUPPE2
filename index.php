@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
+session_start();
 require 'top.php';
-require 'modal.php';
 require 'slideshow.php';
 ?>  
 

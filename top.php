@@ -1,3 +1,7 @@
+<?php
+  require 'modal.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,11 +60,18 @@
   </form>
 </div>
 
-<button type="button"  href="" class="btn btn-default" data-toggle="modal" data-target="#modalLoginForm"> <span class="fas fa-user"></span> LOGIN</button>
 
-  <!-- Button for my prifle after logging in
-  <button type="button" class="btn btn-default"> <span class="fas fa-user"></span> My profile</button>
--->
+
+<?php
+
+  if(!isset($_SESSION['customerId'])) {
+    echo '<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalLoginForm"> <span class="fas fa-user"></span> LOGIN</button>';
+  }
+  elseif (isset($_SESSION['customerId'])) {
+    echo '<a href="profile.php"  class="btn btn-default"> <span class="fas fa-user"></span> My profile</a>';
+  }
+  
+?>
 
 <button type="button" class="btn btn-default"> <span class="fas fa-shopping-cart"></span> </button>
 

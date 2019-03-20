@@ -13,7 +13,7 @@ $sql = "SELECT * FROM CustomerScore WHERE Customer_IdCustomer ='$id' AND Categor
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 if ($resultCheck > 0) {
-    header("Location: ../profile.php");
+    header("Location: ../APPGRUPPE2/profile.php");
     exit();
 }
 

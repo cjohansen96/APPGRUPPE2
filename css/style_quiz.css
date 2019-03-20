@@ -1,0 +1,28 @@
+.contentbox {
+	background-color: #e8e8e8;
+}
+
+.profiletxt {
+	font-weight: bold;
+}
+
+.editbtn {
+	background-color: grey;
+	border-color: grey;
+}
+
+.editbtn:hover {
+	background-color: #fc9c3c;
+	border-color: #f98d20;
+}
+
+input[type=text] {
+	width: 300px;
+	text-align: center;
+}
+
+input[type=password] {
+	width: 300px;
+	text-align: center;
+}
+

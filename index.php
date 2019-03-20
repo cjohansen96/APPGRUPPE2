@@ -4,6 +4,7 @@
 <?php
 require 'top.php';
 require 'modal.php';
+require 'slideshow.php';
 ?>  
 
 <head>
@@ -17,11 +18,7 @@ require 'modal.php';
 
 <body>
 
-  <div class="container-fluid">
-   <div class="row">
-     <a href="#"><img src="Bilder/salesbanner2.png" class="img-fluid" alt="Sales banner"></a>
-   </div>
- </div>
+
 
  <div style="margin-top: 20px; margin-bottom: 20px;" class="container">
   <div class="row">

@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if (isset($_SESSION['customerId'])) {
+        header("Location: ../APPGRUPPE2/index.php");
+        exit();
+	}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">

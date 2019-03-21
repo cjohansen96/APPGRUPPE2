@@ -13,20 +13,20 @@
 <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
+        <div class="mySlides fader">
             <script>plusSlides(-1)</script>
           <div class="numbertext"></div>
           <img src="bilder/salebanner1.png" style="width:100%">
           <div class="text"></div>
         </div>
       
-        <div class="mySlides fade">
+        <div class="mySlides fader">
           <div class="numbertext"></div>
           <img src="bilder/salebanner2.png" style="width:100%">
           <div class="text"></div>
         </div>
       
-        <div class="mySlides fade">
+        <div class="mySlides fader">
           <div class="numbertext"></div>
           <img src="bilder/salebanner3.png" style="width:100%">
           <div class="text"></div>

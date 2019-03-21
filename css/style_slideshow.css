@@ -24,19 +24,19 @@ html,body
 
 
 /* Fading animation */
-.fade {
+.fader {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 3.5s;
   animation-name: fade;
   animation-duration: 4.5s;
 }
 
-@-webkit-keyframes fade {
+@-webkit-keyframes fader {
   from {opacity: .4} 
   to {opacity: 1}
 }
 
-@keyframes fade {
+@keyframes fader {
   from {opacity: .4} 
   to {opacity: 1}
 }

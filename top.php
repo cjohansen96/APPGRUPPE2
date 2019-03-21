@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style_top.css">
 </head>
+<?php
+require 'modal.php';
+?>
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark navbarbgclr">
@@ -30,17 +33,17 @@
           <li class="dropdown" style="padding-right: 10px;">
             <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2>MEN </h2></a>
             <ul class="dropdown-menu text-center navbarbgclr">
-              <li><a href="mensclothes.php">T-shirts</a></li>
-              <li><a href="#">Sweaters</a></li>
-              <li><a href="#">Jeans</a></li>
+              <li><a href="menstshirts.php">T-shirts</a></li>
+              <li><a href="menssweaters.php">Sweaters</a></li>
+              <li><a href="mensjeans.php">Jeans</a></li>
             </ul>
           </li> 
           <li class="dropdown">
             <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> WOMEN</h2></a>
             <ul class="dropdown-menu text-center navbarbgclr">
-              <li><a href="#">T-shirts</a></li>
-              <li><a href="#">Sweaters</a></li>
-              <li><a href="#">Jeans</a></li>
+              <li><a href="womenstshirts.php">T-shirts</a></li>
+              <li><a href="womenssweaters.php">Sweaters</a></li>
+              <li><a href="womensjeans.php">Jeans</a></li>
             </ul>
           </li>
     <!-- dropdown for cart and login for smaller screens
@@ -73,7 +76,10 @@
   
 ?>
 
-<button type="button" class="btn btn-default"> <span class="fas fa-shopping-cart"></span> </button>
+<a href="cart.php" class="btn btn-default"><span class="fas fa-shopping-cart"></span></a>
+<!--
+<button href="cart.php" type="button" class="btn btn-default"> <span class="fas fa-shopping-cart"></span> </button>
+-->
 
 </div>
 </nav>

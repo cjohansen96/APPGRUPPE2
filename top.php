@@ -65,6 +65,7 @@ require 'modal.php';
 
 
 
+
 <?php
 
   if(!isset($_SESSION['customerId'])) {
@@ -72,6 +73,7 @@ require 'modal.php';
   }
   elseif (isset($_SESSION['customerId'])) {
     echo '<a href="profile.php"  class="btn btn-default"> <span class="fas fa-user"></span> My profile</a>';
+    echo '<a href="includes/logout.inc.php" class="btn btn-default"> <span class="fas fa-sign-out-alt"> </span> </a>';
   }
   
 ?>

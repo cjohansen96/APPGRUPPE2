@@ -9,7 +9,7 @@ if(isset($_POST['login-submit'])) {
 
 	// Inndatavalidering. Sjekker om det tom inndata fra bruker
 	if (empty($email) || empty($password)) {
-    	header("Location: ../login.php?error=emptyfields&mail".$email."&pwd=".$password);
+    	header("Location: ../index.php?error=emptyfields&mail".$email."&pwd=".$password);
     	exit();
 	}
 	// Sender sql med placeholders inn til databasen, så fyller vi det inn med inn data fra brukeren senere.
@@ -18,7 +18,7 @@ if(isset($_POST['login-submit'])) {
     	$stmt = mysqli_stmt_init($conn);
 
     	if (!mysqli_stmt_prepare($stmt, $sql)) {
-    		header("Location: ../login.php?error=sqlerror");
+    		header("Location: ../index.php?error=sqlerror");
     		exit();
     	}
     	else {
@@ -31,7 +31,7 @@ if(isset($_POST['login-submit'])) {
         		$pwdCheck = password_verify($password, $row['Password']); 
         		
         		if ($pwdCheck == false) {
-        			header("Location: ../login.php?error=wrongpassword");
+        			header("Location: ../index.php?error=wrongpassword");
         			exit();
         		}       
         		else if($pwdCheck == true) {
@@ -40,12 +40,12 @@ if(isset($_POST['login-submit'])) {
         			$_SESSION['email'] = $row['Email'];
                     $_SESSION['customerId'] = $row['IdCustomer'];  
                            			
-        			header("Location: ../login.php?login=success");
+        			header("Location: ../index.php?login=success");
         			exit();
         		}
         	}	   		
         	else {
-        		header("Location: ../login.php?login=wrongemailpwd");
+        		header("Location: ../index.php?login=wrongemailpwd");
         		exit();
 
             }		    		
@@ -56,7 +56,7 @@ if(isset($_POST['login-submit'])) {
 	mysqli_close($conn);
 }
 else {
-	header("location: ../login.php");
+	header("location: ../APPGRUPPE2/index.php");
 	exit();
 }
 

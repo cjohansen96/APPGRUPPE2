@@ -31,14 +31,15 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+<?php
+	require 'top.php';
+?>
 <link rel="stylesheet" type="text/css" href="css/style_profile.css">
 
 	<title></title>
 </head>
 <body>
-<?php
-	require 'top.php';
-?>
 <!-- Content for the profile -->
 <div class="container contentbox"> <br>
 	<h2 class="text-center" style="color: black;"> MY PROFILE </h2>

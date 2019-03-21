@@ -11,6 +11,7 @@ if (isset($_POST['reg-submit'])) {
   $password = $_POST['pwd'];
   $passwordRepeat = $_POST['pwd-repeat'];
 
+
   // Inndata validering av de forskjellige inndata bruker skriver inn i registrering skjema, mange forskjellige valideringer
   // man kan ha, men jeg valgte de som jeg trodde var mest viktige for våres applikasjon.
   if (empty($name) || empty($lastName) || empty($email) || empty($tlfNumber) || empty($password) || empty($passwordRepeat)) {
@@ -35,6 +36,22 @@ if (isset($_POST['reg-submit'])) {
   }  
   else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header("Location: ../registration.php?error=invalidmail&mail=".$email);
+    exit();
+  }
+  elseif (!preg_match('@[A-Z]@', $password)) {
+    header("Location: ../registration.php?error=passwordNeedsOneUppercase");
+    exit();
+  }
+  elseif (!preg_match('@[a-z]@', $password)) {
+    header("Location: ../registration.php?error=passwordNeedsOneLowercase");
+    exit();
+  }
+  elseif (!preg_match('@[0-9]@', $password)) {
+    header("Location: ../registration.php?error=passwordNeedsOneNumber");
+    exit();
+  }
+  elseif (!preg_match("/^.{8,}$/", $password)) {
+    header("Location: ../registration.php?error=passwordMinimum8lettersLong");
     exit();
   }
   else if ($password !== $passwordRepeat) {

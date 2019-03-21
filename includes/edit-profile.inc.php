@@ -39,19 +39,8 @@ if(isset($_POST['save-submit'])) {
     else {
       
       $id = $_SESSION['customerId'];
-
-      $sql = "UPDATE Customer SET First_Name='$name', Last_Name='$lastName', Email='$email', Phone='$tlfNumber' WHERE IdCustomer ='$id'";
-
-      if (mysqli_query($conn, $sql)) {
-        header("Location: ../profile.php?update=success");
-      } 
-      else {
-        echo("error= " . mysqli_error($conn));
-      }
-      mysqli_close($conn);
-
-      /*
-      $sql = "UPDATE Customer SET First_Name=?, Last_Name=?, Email=?, Phone=? WHERE Email ='$id'";
+      
+      $sql = "UPDATE Customer SET First_Name=?, Last_Name=?, Email=?, Phone=? WHERE IdCustomer ='$id'";
       $stmt = mysqli_stmt_init($conn);
 
       if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -62,11 +51,10 @@ if(isset($_POST['save-submit'])) {
         mysqli_stmt_bind_param($stmt, "ssss", $name, $lastName, $email, $tlfNumber); 
 
         mysqli_stmt_execute($stmt);
-        header("Location: ../profile.php?registration=success");
+        header("Location: ../profile.php?update=success");
         exit();
       }
       
-  */
     }
 }
 

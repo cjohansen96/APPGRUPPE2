@@ -17,7 +17,7 @@ if (isset($_POST['reg-submit'])) {
     header("Location: ../registration.php?error=emptyfields&name".$name."&mail=".$email);
     exit();
   }
-  else if (!preg_match("/^[a-zA-Z]*$/", $name) && !preg_match("/^[a-zA-Z]*$/", $lastName) && !preg_match("/^[0-9]*$/", $tlfNumber) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  else if (!preg_match("/^[a-zA-Z]*$/", $name) && !preg_match("/^[a-zA-Z]*$/", $lastName) && !preg_match("/^[0-9]{8}+$/", $tlfNumber) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header("Location: ../registration.php?error=invalidnamelnametlfemail");
     exit();
   }
@@ -29,7 +29,7 @@ if (isset($_POST['reg-submit'])) {
     header("Location: ../registration.php?error=invalidlname&lname=".$LastName);
     exit();
   }
-  else if (!preg_match("/^[0-9]*$/", $tlfNumber)) {
+  else if (!preg_match("/^[0-9]{8}+$/", $tlfNumber)) {
     header("Location: ../registration.php?error=invalidltlf&tlf=".$tlfNumber);
     exit();
   }  

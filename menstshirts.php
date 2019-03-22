@@ -13,46 +13,16 @@ require 'includes/dbh.inc.php';
 ?>
 
 <body>
+
+	<!-- product filter -->
+
+
+
+
+
+
 	<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
 		<div class="row">
-
-			<!-- Filter options -->
-
-			<!--
-			<div class="col-md-3 col-sm-12">
-				<h1><span class="fas fa-sliders-h" style="font-size: 0.9em;"></span>Filter</h1>
-				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
-					<option>Category</option>
-					<option>T-shirt</option>
-					<option>Sweater</option>
-					<option>Jeans</option>
-				</select>
-				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
-					<option>Brand</option>
-					<option>Exizt</option>
-					<option>Vans</option>
-					<option>The hundreds</option>
-				</select>
-				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
-					<option>Price</option>
-					<option>Low-high</option>
-					<option>High-low</option>	
-				</select>
-				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
-					<option>Color</option>
-					<option>Black</option>
-					<option>Grey</option>
-					<option>White</option>
-				</select>
-				<select class="form-control form-control-lg" style="margin-bottom: 10px;">
-					<option>Size</option>
-					<option>S</option>
-					<option>M</option>
-					<option>L</option>
-				</select>
-			</div>
--->
-
 			<?php
 			$query = 'SELECT * FROM Clothes WHERE Category="Tshirt"';
 			$result = mysqli_query($conn,$query);	
@@ -66,7 +36,7 @@ require 'includes/dbh.inc.php';
 				<form method="post" action="clothing.php?action=add&id=<?php echo $Clothes['IdClothes'];?>">
 				<div style="height: 450px;" class="card shadow text-center">
 					<div class="card-block">
-						<img src="Bilder/clothes/<?php echo $Clothes ['ProductImage'];?>" alt="" class="img-fluid">
+						<img src="Bilder/clothes/<?php echo $Clothes ['ProductImage'];?>" alt="" class="img-fluid" style="height: 250px;">
 						<div class="card-title">
 							<h4><?php echo $Clothes['Name'];?></h4>
 						</div>

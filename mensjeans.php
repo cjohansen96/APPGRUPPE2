@@ -66,7 +66,7 @@ require 'includes/dbh.inc.php';
 				<form method="post" action="clothing.php?action=add&id=<?php echo $Clothes['IdClothes'];?>">
 				<div style="height: 450px;" class="card shadow text-center">
 					<div class="card-block">
-						<img src="Bilder/clothes/<?php echo $Clothes ['ProductImage'];?>" alt="" class="img-fluid">
+						<img src="Bilder/clothes/<?php echo $Clothes ['ProductImage'];?>" alt="" class="img-fluid" style="height: 250px;">
 						<div class="card-title">
 							<h4><?php echo $Clothes['Name'];?></h4>
 						</div>

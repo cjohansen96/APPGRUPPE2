@@ -34,7 +34,7 @@ if ($resultCheck > 0) {
 	?>
 
 	<div class="container contentbox"> <br>
-		<h2 class="text-center" style="color: black;"> Welcome to the monthly contest, <?php echo $_SESSION['email'];  ?>. This months quiz is about SPACE</h2>
+		<h2 class="text-center" style="color: black;"> Welcome to the monthly contest, <?php echo $_SESSION['name'];  ?>. This months quiz is about SPACE</h2>
 		<br>
 
 		<div class="row">

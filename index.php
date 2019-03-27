@@ -19,7 +19,7 @@ require 'slideshow.php';
 <body>
 
 
-
+<div class="wrapper">
  <div style="margin-top: 20px; margin-bottom: 20px;" class="container">
   <div class="row">
     <div  class="col-sm-4" style="outline: none; border: none; border-style: none;">
@@ -35,7 +35,7 @@ require 'slideshow.php';
       </div>
     </div>
     <div class="col-sm-4" style="outline: none; border: none; border-style: none;">
-      <img src="Bilder/mens-fashion3.jpg" class="img-fluid" alt="trenging">
+      <img src="Bilder/mens-fashion3.jpg" class="img-fluid" alt="trending">
       <div class="carousel-caption">
         <h1 style="font-size: 20px; outline: 1px solid orange; background-color: black;">Trending</h1>
       </div>
@@ -49,6 +49,30 @@ require 'slideshow.php';
  </div>
 </div>
 
+<div style="margin-top: 20px; margin-bottom: 20px;" class="container">
+  <div class="row">    
+    <div class="col-sm-4"  style="outline: none; border: none; border-style: none;">
+      <img src="Bilder/clothes/11.png" class="img-fluid" alt="">
+      <div class="carousel-caption">
+        <h1 style="font-size: 20px; outline: 1px solid orange; background-color: black;">New sweaters</h1>
+      </div>
+    </div>
+    <div  class="col-sm-4"  style="outline: none; border: none; border-style: none;">
+      <img src="Bilder/clothes/18.png" class="img-fluid" alt="">
+      <div class="carousel-caption">
+        <h1 style="font-size: 20px; outline: 1px solid orange; background-color: black;">New jeans</h1>
+      </div>
+    </div>
+
+    <div class="col-sm-4"  style="outline: none; border: none; border-style: none;">
+      <img src="Bilder/clothes/5.png" class="img-fluid" alt="">
+      <div class="carousel-caption">
+        <h1 style="font-size: 20px; outline: 1px solid orange; background-color: black;">New T-shirts</h1>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </body>
 
 <?php

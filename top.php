@@ -42,14 +42,26 @@ require 'modal.php';
               <li><a href="womensjeans.php">Jeans</a></li>
             </ul>
           </li>
-    <!-- dropdown for cart and login for smaller screens
-    <li class="dropdown">
-      <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> LOGIN</h2></a>
+    <!-- dropdown for cart and login for smaller screens -->
+    <?php
+    if(!isset($_SESSION['customerId'])) {
+    echo '<li class="dropdown" id="login">
+      <a href="#modalLoginForm" data-toggle="modal" style="text-decoration: none;"><h2> LOGIN</h2></a>
+    </li>';
+    }
+    elseif (isset($_SESSION['customerId'])) {
+      echo '<li class="dropdown" id="login">
+      <a href="profile.php" style="text-decoration: none;"><h2> MY PROFILE</h2></a>
+      </li>';
+      echo '<li class="dropdown" id="login">
+      <a href="includes/logout.inc.php" style="text-decoration: none;"><h2> LOGOUT</h2></a>
+      </li>';
+    }
+    ?>
+      <li class="dropdown" id="cart">
+      <a href="cart.php"  style="text-decoration: none;"><h2> CART</h2></a>
     </li>
-    <li class="dropdown" id="cartdd">
-      <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> CART</h2></a>
-    </li>
-  -->
+ 
 </ul>
 </div>
 <div id="searchbar">

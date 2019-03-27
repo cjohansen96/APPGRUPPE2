@@ -48,9 +48,6 @@ while($row = mysqli_fetch_assoc($result))
         <div style="height: 450px;" class="card shadow text-center">
           <div class="card-block">
             <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 250px;">
-            <div class="card-title">
-              <h4>'.$row['Name'].'</h4>
-            </div>
             <div class="card-text">
               '.$row['Brand'].'
             </div>

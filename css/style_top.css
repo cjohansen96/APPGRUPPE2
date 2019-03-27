@@ -29,13 +29,37 @@ h2:hover{
 .fas{
 	font-size: 20px;
 }
+#login{
+	display: none;
+}
+#cart{
+	display: none;
+}
 
 
-@media (max-width: 860px){
+@media (max-width: 930px){
 	#searchbar{
 		display: none;
 	}
-	.btn-default:nth-child(1){
+	.btn.btn-default:nth-child(1){
 		display: none;
+	}
+	#login{
+		display: none;
+	}
+	#cart{
+		display: none;
+	}
+}
+
+@media (max-width: 768px){
+	.btn.btn-default{
+		display: none;
+	}
+	#login{
+		display: list-item;
+	}
+	#cart{
+		display: list-item;
 	}
 }

@@ -3,6 +3,9 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+#cardHeight{
+	height: 300px;
+}
 
 @media (max-width: 767px){
 

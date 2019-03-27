@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
@@ -12,14 +12,16 @@ aria-hidden="true">
       <div class="md-form mb-5">
         <form action="includes/login.inc.php" method="post">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="defaultForm-email" class="form-control validate" name="mail" placeholder="E-mail">
           <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+          <input type="email" id="defaultForm-email" class="form-control validate" name="mail" placeholder="E-mail">
+          
         </div>
 
         <div class="md-form mb-4">
           <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="defaultForm-pass" class="form-control validate" name="pwd" placeholder="Password">
           <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+          <input type="password" id="defaultForm-pass" class="form-control validate" name="pwd" placeholder="Password">
+          
         </div>
         <div class="center">
           <a> Not registered?</a> <a class="white-txt" href="registration.php">Create an account </a>
@@ -33,6 +35,9 @@ aria-hidden="true">
             background-color: black;
             color: white;
             margin-left: 5px;
+          }
+          .btn-login:hover{
+            color: orange;
           }
           .white-txt {
             color:black;

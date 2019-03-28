@@ -15,6 +15,7 @@ require 'top.php';
 		<div class="row">
 			<div class="col-md-3">     
 				<div class="list-group">
+					<h1> Filter </h1> <br>
 					<h3>Brand</h3>
 					<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 						<?php
@@ -84,8 +85,10 @@ require 'top.php';
 
 	</div>
 
+
 	<script>
-		$(document).ready(function(){
+		//Jquery code
+		$(document).ready(function(){ // Everything loads after the document is loaded.
 
 			filter_data();
 
@@ -95,12 +98,12 @@ require 'top.php';
 				var brand = get_filter('brand');
 				var category = get_filter('category');
 				var color = get_filter('color');
-				$.ajax({
+				$.ajax({ //Ajax code
 					url:"includes/fetch_data.inc.php",
 					method:"POST",
-					data:{action:action, brand:brand, category:category, color:color},
-					success:function(data){
-						$('.filter_data').html(data);
+					data:{action:action, brand:brand, category:category, color:color}, //Passing variables to fetch_data.inc.php
+					success:function(data){		//Sucsess callback function
+						$('.filter_data').html(data); // Pasting html data into the class filter_data
 					}
 				});
 			}
@@ -108,13 +111,13 @@ require 'top.php';
 			function get_filter(class_name)
 			{
 				var filter = [];
-				$('.'+class_name+':checked').each(function(){
+				$('.'+class_name+':checked').each(function(){ //To retrieve only the selected options of select elements, use the :selected selector
 					filter.push($(this).val());
 				});
 				return filter;
 			}
 
-			$('.common_selector').click(function(){
+			$('.common_selector').click(function(){ // A fuction that needs to run, when it is clicked
 				filter_data();
 			});
 

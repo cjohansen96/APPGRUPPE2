@@ -4,50 +4,40 @@
 
 include('dbh.inc.php');
 
-if(isset($_POST["action"]))
-{
- $query = "
- SELECT * FROM Clothes WHERE Gender = 'M'
- ";
+if(isset($_POST["action"])) {
+  $query = "
+  SELECT * FROM Clothes WHERE Gender = 'M'";
 
-if(isset($_POST["brand"]))
-{
-  $brand_filter = implode("','", $_POST["brand"]);
-  $query .= "
-  AND Brand IN('".$brand_filter."')
-  ";
-}
+  if(isset($_POST["brand"]))  {
+    $brand_filter = implode("','", $_POST["brand"]);
+    $query .= "
+    AND Brand IN('".$brand_filter."')
+    ";
+  }
 
-elseif(isset($_POST["category"]))
-{
-  $category_filter = implode("','", $_POST["category"]);
-  $query .= "
-  AND Category IN('".$category_filter."')
-  ";
-}
+  else if(isset($_POST["category"])) {
+    $category_filter = implode("','", $_POST["category"]);
+    $query .= "
+    AND Category IN('".$category_filter."')
+    ";
+  }
 
-elseif(isset($_POST["color"]))
-{
-  $color_filter = implode("','", $_POST["color"]);
-  $query .= "
-  AND Color IN('".$color_filter."')
-  ";
-}
+  else if(isset($_POST["color"]))  {
+    $color_filter = implode("','", $_POST["color"]);
+    $query .= "
+    AND Color IN('".$color_filter."')
+    ";
+  }
 
-
-$result = mysqli_query($conn,$query); 
-$output = '';
-while($row = mysqli_fetch_assoc($result))
-{
- $output .= '
-
-
-
+  $result = mysqli_query($conn,$query); 
+  $output = '';
+  while($row = mysqli_fetch_assoc($result)) {
+   $output .= '
       <div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
-        <form method="post" action="clothing.php?action=add&id='.$row['IdClothes'].'">
-        <div style="height: 450px;" class="card shadow text-center">
+        <form method="post">
+        <div style="height: 400px;" class="card shadow text-center">
           <div class="card-block">
-            <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 250px;">
+            <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
             <div class="card-text">
               '.$row['Brand'].'
             </div>
@@ -62,9 +52,8 @@ while($row = mysqli_fetch_assoc($result))
           </div>
         </div>
       </form>
-      </div>
- ';
-}
+      </div>';
+  }
 
 
 echo $output;

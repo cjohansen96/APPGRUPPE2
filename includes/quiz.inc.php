@@ -6,7 +6,7 @@ require 'dbh.inc.php';
 if (isset($_POST['quiz-submit'])) {
 	$score =0;
 
-	$sql = "SELECT * FROM QuizQuestion WHERE Category_IdCategory = 1";
+	$sql = "SELECT * FROM QuizQuestion WHERE Category_IdCategory = 2";
 	$result = mysqli_query($conn, $sql);
 	$counter = 1;
 
@@ -28,7 +28,7 @@ if (isset($_POST['quiz-submit'])) {
 	}
 	else {
 		$id = $_SESSION['customerId'];
-		$category = 1;
+		$category = 2;
 
 		mysqli_stmt_bind_param($stmt, "iii", $score, $category, $id);
 

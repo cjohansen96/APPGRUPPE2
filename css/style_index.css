@@ -3,6 +3,9 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+body{
+	background-color: #E1E2E2;
+}
 #cardHeight{
 	height: 300px;
 }

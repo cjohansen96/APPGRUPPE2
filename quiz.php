@@ -9,7 +9,7 @@ if(!isset($_SESSION['customerId'])){
 
 
 $id = $_SESSION['customerId'];
-$sql = "SELECT * FROM CustomerScore WHERE Customer_IdCustomer ='$id' AND Category_IdCategory";
+$sql = "SELECT * FROM CustomerScore WHERE Customer_IdCustomer ='$id' AND Category_IdCategory = 2";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 if ($resultCheck > 0) {
@@ -26,20 +26,26 @@ if ($resultCheck > 0) {
 	<title>Quiz</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style_profile.css">
+	<link rel="stylesheet" type="text/css" href="css/style_quiz.css">
+	
 </head>
-<body>
+<body style="background: url('Bilder/worldmapbg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;">
 	<?php
 	require 'top.php';
 	?>
+	
 
-	<div class="container contentbox"> <br>
-		<h2 class="text-center" style="color: black;"> Welcome to the monthly contest, <?php echo $_SESSION['name'];  ?>. This months quiz is about SPACE</h2>
+	<div class="container contentbox col-lg-6 col-md-8 col-sm-12" style="margin-bottom: 20px; margin-top: 20px; background-color: rgba(232, 232, 232, 0.9);"> <br>
+		<h2 class="text-center" style="color: black;"> Welcome to the monthly contest, <?php echo $_SESSION['name'];  ?>. This months quiz is about GEOGRAPHY</h2>
 		<br>
 
 		<div class="row">
 			<div class="col-sm text-center">
-				<p class="profiletxt">To have a chance to win cool prices, answer correct on all the question. You only have one chance, so answer carefully. Good luck!</p>
+				<p class="profiletxt">To have a chance to win cool prices, answer correct on all the questions. You only have one chance, so answer carefully. Good luck!</p>
 			</div>
 		</div>
 		<br> <br>
@@ -48,7 +54,7 @@ if ($resultCheck > 0) {
 			<div class="col-sm text-center">
 				<form  method="post" action="includes/quiz.inc.php">
 					<?php
-					$sql = "SELECT * FROM QuizQuestion WHERE Category_IdCategory = 1";
+					$sql = "SELECT * FROM QuizQuestion WHERE Category_IdCategory = 2";
 					$result = mysqli_query($conn, $sql);
 					$counter = 1;
 
@@ -69,7 +75,7 @@ if ($resultCheck > 0) {
 					?>
 
 
-					<button type='submit' name="quiz-submit">Submit</button>
+					<button class="btn btn-default qbt" type='submit' name="quiz-submit" style="margin-bottom: 10px; ">Submit</button>
 				</form>
 			</div>
 		</div>

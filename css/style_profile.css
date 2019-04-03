@@ -5,7 +5,7 @@
 .profiletxt {
 	font-weight: bold;
 }
-
+/*
 .editbtn {
 	background-color: grey;
 	border-color: grey;
@@ -15,6 +15,16 @@
 	background-color: #fc9c3c;
 	border-color: #f98d20;
 }
+*/
+.btn.btn-secondary.editbtn{
+	background-color: #1D2228;
+	color: white;
+}
+.btn.btn-secondary.editbtn:hover{
+	background-color: #FB8122;
+	color: #1D2228;
+}
+
 
 input[type=text] {
 	width: 300px;

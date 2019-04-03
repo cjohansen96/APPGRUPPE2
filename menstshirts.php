@@ -32,7 +32,7 @@ require 'includes/dbh.inc.php';
 				while ($Clothes = mysqli_fetch_assoc($result)):
 				?>		
 			<!-- Clothing cards -->
-			<div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+			<div style="margin-bottom: 20px;" class="col-md-6 col-sm-6 col-lg-3">
 				<form method="post" action="clothing.php?action=add&id=<?php echo $Clothes['IdClothes'];?>">
 				<div style="height: 450px;" class="card shadow text-center">
 					<div class="card-block">

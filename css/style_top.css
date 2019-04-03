@@ -1,5 +1,5 @@
 .navbarbgclr{
-	background-color: black;
+	background-color: #1D2228;
 }
 .clrblack{
 	color: black;
@@ -10,12 +10,16 @@
 .navmargin{
 	margin-left: 20px;
 }
-
+a:hover{
+	color: #FB8122;
+}
 h2{
 	color: white;
+	font-size: 23px;
+	font-family: sans-serif;
 }
 h2:hover{
-	color: orange;
+	color: #FB8122;
 }
 .btn-default{
 	background-color: white;
@@ -23,7 +27,7 @@ h2:hover{
 	margin-left: 5px;
 }
 .btn-default:hover{
-	background-color: orange;
+	background-color: #FB8122;
 	color: black;
 }
 .fas{

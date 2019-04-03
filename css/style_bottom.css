@@ -1,10 +1,13 @@
 footer{
-	background-color: black;
+	background-color: #1D2228;
 	color: white;
 }
 a{
 	color: white;
 }
 a:hover{
-	color: orange;
+	color: #FB8122;
+}
+h5{
+	color: #FB8122;
 }

@@ -3,7 +3,7 @@
 	require 'includes/dbh.inc.php';
 
 	if(!isset($_SESSION['customerId'])){
-		header("location: ../APPGRUPPE2/index.php");
+		header("location: ../index.php");
 		exit();
 	}
 
@@ -37,26 +37,30 @@
 ?>
 <link rel="stylesheet" type="text/css" href="css/style_profile.css">
 
-	<title></title>
+	<title>My profile</title>
 </head>
 <body>
 <!-- Content for the profile -->
 <div class="container contentbox"> <br>
 	<h2 class="text-center" style="color: black;"> MY PROFILE </h2>
 		<br>
-
 	<div class="row">
-		<div class="col-sm text-center">
+		<div class="col-sm-4 text-center">
+			<img src="Bilder/avatar-orange.png">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4 text-center">
 			<p class="profiletxt">Name:</p>
 			<?php echo $userArray['First_Name'] . " " . $userArray['Last_Name'];  ?>
 		</div>
 
-		<div class="col-sm text-center">
+		<div class="col-sm-4 text-center">
 			<p class="profiletxt">Email:</p>
 			<?php echo $userArray['Email']; ?>
 		</div>
 
-		<div class="col-sm text-center">
+		<div class="col-sm-4 text-center">
 			<p class="profiletxt">Tlf:</p>
 			<?php echo $userArray['Phone']; ?>
 			<br> <br>
@@ -122,5 +126,9 @@
 		</div>
 
 	</div>
+
 </body>
+<?php
+		require 'bottom.php';
+	?>
 </html>

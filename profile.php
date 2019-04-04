@@ -56,12 +56,12 @@
 		</div>
 
 		<div class="col-sm-4 text-center">
-			<p class="profiletxt">Email:</p>
+			<p class="profiletxt"><span class="fas fa-at"></span> Email:</p>
 			<?php echo $userArray['Email']; ?>
 		</div>
 
 		<div class="col-sm-4 text-center">
-			<p class="profiletxt">Tlf:</p>
+			<p class="profiletxt"><span class="fas fa-mobile-alt"></span> Phone:</p>
 			<?php echo $userArray['Phone']; ?>
 			<br> <br>
 		</div>
@@ -90,7 +90,7 @@
 				   <label>Email:</label> <br>
 				   <input type="text" name="mail" value="<?php echo $userArray['Email'];?>"> <br>
 
-				   <label>Tlf:</label> <br>
+				   <label>Phone:</label> <br>
 				   <input type="text" name="tlf" value="<?php echo $userArray['Phone'];?>"> <br> <br>
 
 				   <button type="submit" class="btn btn-secondary editbtn" name="save-submit">Save

@@ -1,3 +1,6 @@
+body{
+	background-color: #e8e8e8;
+}
 .contentbox {
 	background-color: #e8e8e8;
 }
@@ -34,5 +37,9 @@ input[type=text] {
 input[type=password] {
 	width: 300px;
 	text-align: center;
+}
+input{
+	border-radius: 3px;
+	border-width: 1px;
 }
 

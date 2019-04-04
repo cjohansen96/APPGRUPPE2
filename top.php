@@ -30,17 +30,17 @@ require 'modal.php';
           <li class="dropdown" style="padding-right: 10px;">
             <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2>MEN </h2></a>
             <ul class="dropdown-menu text-center navbarbgclr">
-              <li><a href="menstshirts.php">T-shirts</a></li>
-              <li><a href="menssweaters.php">Sweaters</a></li>
-              <li><a href="mensjeans.php">Jeans</a></li>
+              <li><a href="mens.php?clothes=Tshirt">T-shirts</a></li>
+              <li><a href="mens.php?clothes=Sweater">Sweaters</a></li>
+              <li><a href="mens.php?clothes=Jeans">Jeans</a></li>
             </ul>
           </li> 
           <li class="dropdown">
             <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> WOMEN</h2></a>
             <ul class="dropdown-menu text-center navbarbgclr">
-              <li><a href="womenstshirts.php">T-shirts</a></li>
-              <li><a href="womenssweaters.php">Sweaters</a></li>
-              <li><a href="womensjeans.php">Jeans</a></li>
+              <li><a href="womens.php?clothes=Tshirt">T-shirts</a></li>
+              <li><a href="womens.php?clothes=Sweater">Sweaters</a></li>
+              <li><a href="womens.php?clothes=Jeans">Jeans</a></li>
             </ul>
           </li>
     <!-- dropdown for cart and login for smaller screens -->

@@ -6,6 +6,7 @@
 
 
 <?php
+session_start();
 require 'includes/dbh.inc.php';
 require 'top.php';
 

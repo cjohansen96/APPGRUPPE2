@@ -35,23 +35,23 @@ if (isset($_POST['reg-submit'])) {
     exit();
   }  
   elseif (!preg_match('@[A-Z]@', $password)) {
-    header("Location: ../registration.php?error=uppercase&name=$name&lname=$lastName&mail=$email");
+    header("Location: ../registration.php?error=uppercase&name=$name&lname=$lastName&mail=$email&tlf=$tlfNumber");
     exit();
   }
   elseif (!preg_match('@[a-z]@', $password)) {
-    header("Location: ../registration.php?error=lowercase&name=$name&lname=$lastName&mail=$email");
+    header("Location: ../registration.php?error=lowercase&name=$name&lname=$lastName&mail=$email&tlf=$tlfNumber");
     exit();
   }
   elseif (!preg_match('@[0-9]@', $password)) {
-    header("Location: ../registration.php?error=onenumber&name=$name&lname=$lastName&mail=$email");
+    header("Location: ../registration.php?error=onenumber&name=$name&lname=$lastName&mail=$email&tlf=$tlfNumber");
     exit();
   }
   elseif (!preg_match("/^.{8,}$/", $password)) {
-    header("Location: ../registration.php?error=minimum8&name=$name&lname=$lastName&mail=$email");
+    header("Location: ../registration.php?error=minimum8&name=$name&lname=$lastName&mail=$email&tlf=$tlfNumber");
     exit();
   }
   else if ($password !== $passwordRepeat) {
-    header("Location: ../registration.php?error=notmatching&name=$name&lname=$lastName&mail=$email");
+    header("Location: ../registration.php?error=notmatching&name=$name&lname=$lastName&mail=$email&tlf=$tlfNumber");
     exit();
   }
 

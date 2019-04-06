@@ -41,3 +41,16 @@ input{
 	border-radius: 3px;
 	border-width: 1px;
 }
+
+/*Form error handling*/
+.form-error {
+	color: red;
+}
+
+.form-success {
+	color: green;
+}
+
+.input-error {
+	box-shadow: 0 0 5px red;
+}

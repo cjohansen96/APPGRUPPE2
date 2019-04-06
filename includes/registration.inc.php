@@ -7,7 +7,7 @@ if (isset($_POST['reg-submit'])) {
   $name = $_POST['name'];
   $lastName = $_POST['lname'];
   $email = $_POST['mail'];
-  $tlfNumber = $_POST['tlf'];
+  $tlfNumber = $_POST['tlf']; 
   $password = $_POST['pwd'];
   $passwordRepeat = $_POST['pwd-repeat'];
 
@@ -15,47 +15,43 @@ if (isset($_POST['reg-submit'])) {
   // Inndata validering av de forskjellige inndata bruker skriver inn i registrering skjema, mange forskjellige valideringer
   // man kan ha, men jeg valgte de som jeg trodde var mest viktige for våres applikasjon.
   if (empty($name) || empty($lastName) || empty($email) || empty($tlfNumber) || empty($password) || empty($passwordRepeat)) {
-    header("Location: ../registration.php?error=emptyfields&name".$name."&mail=".$email);
+    header("Location: ../registration.php?error=emptyfields");
     exit();
   }
-  else if (!preg_match("/^[a-zA-Z]*$/", $name) && !preg_match("/^[a-zA-Z]*$/", $lastName) && !preg_match("/^[0-9]{8}+$/", $tlfNumber) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: ../registration.php?error=invalidnamelnametlfemail");
+  else if (!preg_match("/^[a-zA-ZæøåÆØÅ]*$/", $name)) {
+    header("Location: ../registration.php?error=invalidfname");
     exit();
   }
-  else if (!preg_match("/^[a-zA-Z]*$/", $name)) {
-    header("Location: ../registration.php?error=invalidname&name=".$name);
+  else if (!preg_match("/^[a-zA-ZæøåÆØÅ]*$/", $lastName)) {
+    header("Location: ../registration.php?error=invalidlname&name=$name");
     exit();
   }
-  else if (!preg_match("/^[a-zA-Z]*$/", $lastName)) {
-    header("Location: ../registration.php?error=invalidlname&lname=".$LastName);
+  else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: ../registration.php?error=invalidmail&name=$name&lname=$lastName");
     exit();
   }
   else if (!preg_match("/^[0-9]{8}+$/", $tlfNumber)) {
-    header("Location: ../registration.php?error=invalidltlf&tlf=".$tlfNumber);
+    header("Location: ../registration.php?error=invalidtlf&name=$name&lname=$lastName&mail=$email");
     exit();
   }  
-  else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: ../registration.php?error=invalidmail&mail=".$email);
-    exit();
-  }
   elseif (!preg_match('@[A-Z]@', $password)) {
-    header("Location: ../registration.php?error=passwordNeedsOneUppercase");
+    header("Location: ../registration.php?error=uppercase&name=$name&lname=$lastName&mail=$email");
     exit();
   }
   elseif (!preg_match('@[a-z]@', $password)) {
-    header("Location: ../registration.php?error=passwordNeedsOneLowercase");
+    header("Location: ../registration.php?error=lowercase&name=$name&lname=$lastName&mail=$email");
     exit();
   }
   elseif (!preg_match('@[0-9]@', $password)) {
-    header("Location: ../registration.php?error=passwordNeedsOneNumber");
+    header("Location: ../registration.php?error=onenumber&name=$name&lname=$lastName&mail=$email");
     exit();
   }
   elseif (!preg_match("/^.{8,}$/", $password)) {
-    header("Location: ../registration.php?error=passwordMinimum8lettersLong");
+    header("Location: ../registration.php?error=minimum8&name=$name&lname=$lastName&mail=$email");
     exit();
   }
   else if ($password !== $passwordRepeat) {
-    header("Location: ../registration.php?error=passwordcheck&name=".$name."&mail=".$email);
+    header("Location: ../registration.php?error=notmatching&name=$name&lname=$lastName&mail=$email");
     exit();
   }
 

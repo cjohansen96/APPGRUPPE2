@@ -16,52 +16,6 @@ require 'top.php';
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	<title>Exizt Registration</title>
 
-	<script>
-		$(function() {
-  var loc = window.location.href; // returns the full URL
-  if(/invalidfname/.test(loc) ) {
-  	$('#reg-fname').addClass('input-error');
-  	$('#error-fname span').text("Invalid first-name");
-  	$('#error-fname span').addClass('form-error');
-  }
-  if(/invalidlname/.test(loc) ) {
-  	$('#reg-lname').addClass('input-error');
-  	$('#error-lname span').text("Invalid last-name");
-  	$('#error-lname span').addClass('form-error');
-  }
-  if(/invalidmail/.test(loc) ) {
-  	$('#reg-mail').addClass('input-error');
-  	$('#error-mail span').text("Invalid mail");
-  	$('#error-mail span').addClass('form-error');
-  }
-  if(/uppercase/.test(loc) ) {
-  	$('#reg-pwd').addClass('input-error');
-  	$('#error-pwd span').text("Password needs atleast one uppercase!");
-  	$('#error-pwd span').addClass('form-error');
-  }
-  if(/lowercase/.test(loc) ) {
-  	$('#reg-pwd').addClass('input-error');
-  	$('#error-pwd span').text("Password needs atleast one lowercase!");
-  	$('#error-pwd span').addClass('form-error');
-  }
-  if(/onenumber/.test(loc) ) {
-  	$('#reg-pwd').addClass('input-error');
-  	$('#error-pwd span').text("Password needs atleast one number");
-  	$('#error-pwd span').addClass('form-error');
-  }
-  if(/minimum8/.test(loc) ) {
-  	$('#reg-pwd').addClass('input-error');
-  	$('#error-pwd span').text("Password needs to be atleast 8 characters long");
-  	$('#error-pwd span').addClass('form-error');
-  }
-  if(/notmatching/.test(loc) ) {
-  	$('#reg-pwdRepeat').addClass('input-error');
-  	$('#error-pwdRepeat span').text("Passwords not matching");
-  	$('#error-pwdRepeat span').addClass('form-error');
-  }
-});
-</script>
-
 </head>
 <link rel="stylesheet" type="text/css" href="css/style_reg.css">
 <body style="background: url('Bilder/bg3.jpg') no-repeat center center fixed;
@@ -170,6 +124,95 @@ background-size: cover;
 		</div>
 	</div>
 </body>
+
+
+<!-- Errorhandling med jquery(frontend). Visualisering for hva bruker har gjort feil -->
+<script>
+		$(function() {
+  var loc = window.location.href; // returns the full URL
+  if(/emptyfield/.test(loc) ) {
+  	var fname = $('#reg-fname').val();
+  	var lname = $('#reg-lname').val();
+  	var mail = $('#reg-mail').val();
+  	var tlf = $('#reg-tlf').val();
+  	var pwd = $('#reg-pwd').val();
+  	var pwdRepeat = $('#reg-pwdRepeat').val();
+
+  	if (fname == "") {
+  		$('#reg-fname').addClass('input-error');
+  		$('#error-fname span').text("Empty field");
+  		$('#error-fname span').addClass('form-error');
+  	}
+  	if (lname == "") {
+  		$('#reg-lname').addClass('input-error');
+  		$('#error-lname span').text("Empty field");
+  		$('#error-lname span').addClass('form-error');
+  	}
+  	if (mail == "") {
+  		$('#reg-mail').addClass('input-error');
+  		$('#error-mail span').text("Empty field");
+  		$('#error-mail span').addClass('form-error');
+  	}
+  	if (tlf == "") {
+  		$('#reg-tlf').addClass('input-error');
+  		$('#error-tlf span').text("Empty field");
+  		$('#error-tlf span').addClass('form-error');
+  	}
+  	if (pwd == "") {
+  		$('#reg-pwd').addClass('input-error');
+  		$('#error-pwd span').text("Empty field");
+  		$('#error-pwd span').addClass('form-error');
+  	}
+  	if (pwdRepeat == "") {
+  		$('#reg-pwdRepeat').addClass('input-error');
+  		$('#error-pwdRepeat span').text("Empty field");
+  		$('#error-pwdRepeat span').addClass('form-error');
+  	}
+  }
+
+  if(/invalidfname/.test(loc) ) {
+  	$('#reg-fname').addClass('input-error');
+  	$('#error-fname span').text("Invalid first-name");
+  	$('#error-fname span').addClass('form-error');
+  }
+  if(/invalidlname/.test(loc) ) {
+  	$('#reg-lname').addClass('input-error');
+  	$('#error-lname span').text("Invalid last-name");
+  	$('#error-lname span').addClass('form-error');
+  }
+  if(/invalidmail/.test(loc) ) {
+  	$('#reg-mail').addClass('input-error');
+  	$('#error-mail span').text("Invalid mail");
+  	$('#error-mail span').addClass('form-error');
+  }
+  if(/uppercase/.test(loc) ) {
+  	$('#reg-pwd').addClass('input-error');
+  	$('#error-pwd span').text("Password needs atleast one uppercase!");
+  	$('#error-pwd span').addClass('form-error');
+  }
+  if(/lowercase/.test(loc) ) {
+  	$('#reg-pwd').addClass('input-error');
+  	$('#error-pwd span').text("Password needs atleast one lowercase!");
+  	$('#error-pwd span').addClass('form-error');
+  }
+  if(/onenumber/.test(loc) ) {
+  	$('#reg-pwd').addClass('input-error');
+  	$('#error-pwd span').text("Password needs atleast one number");
+  	$('#error-pwd span').addClass('form-error');
+  }
+  if(/minimum8/.test(loc) ) {
+  	$('#reg-pwd').addClass('input-error');
+  	$('#error-pwd span').text("Password needs to be atleast 8 characters long");
+  	$('#error-pwd span').addClass('form-error');
+  }
+  if(/notmatching/.test(loc) ) {
+  	$('#reg-pwdRepeat').addClass('input-error');
+  	$('#error-pwdRepeat span').text("Passwords not matching");
+  	$('#error-pwdRepeat span').addClass('form-error');
+  }
+});
+</script>
+
 <?php
 require 'bottom.php';
 ?>

@@ -4,8 +4,10 @@ img{
 	height: auto;
 }
 body{
-	background-color: #E1E2E2;
+	background-color: #e8e8e8;
 }
+
+
 #cardHeight{
 	height: 300px;
 }
@@ -17,8 +19,5 @@ body{
 		font-size: 1.5em;
 	}
 }
-@media (max-width: 1000px){
-	#quiztxt{
-		font-size: 1em;
-	}
-}
+
+

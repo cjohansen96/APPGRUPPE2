@@ -30,6 +30,26 @@ h2:hover{
 	background-color: #FB8122;
 	color: black;
 }
+.btn-danger{
+	background-color: white;
+	color: black;
+	margin-left: 5px;
+	border-radius: 0px;
+	border:none;
+}
+.btn-danger:hover{
+	background-color: #FB8122;
+	color: black;
+}
+.btn.btn-danger:active{
+	background-color: #FB8122;
+	color: black;
+}
+.btn-danger:not(:disabled):not(.disabled):focus{
+	background-color: #FB8122;
+	color: black;
+	box-shadow: none; 
+}
 .fas{
 	font-size: 20px;
 }
@@ -38,6 +58,12 @@ h2:hover{
 }
 #cart{
 	display: none;
+}
+button.navbar-toggler{
+	color: white;
+}
+button.navbar-toggler:hover{
+	color: #FB8122;
 }
 
 

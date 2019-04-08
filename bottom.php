@@ -18,7 +18,7 @@
         <div class="col-md-6 mt-md-0 mt-3">
           <!-- Content -->
           <h5 class="text-uppercase">About us</h5>
-          <p>Exizt is an up and coming online clothing store<br> with a variety of the latest in fashion.</p>
+          <p>Exizt is an up and coming online clothing store<br> with a variety of the latest in fashion. We strive to have<br> the best prices on a variety of brands, and we also want to <br>deliver the best online shopping experience for our customers.</p>
 
         </div>
         <!-- Grid column -->
@@ -55,6 +55,12 @@
             </li>
             <li>
               <a href="#!">Home</a>
+            </li>
+            <li>
+              <a href="#!">Return policy</a>
+            </li>
+            <li>
+              <a href="#!">Terms and conditions</a>
             </li>
           </ul>
 

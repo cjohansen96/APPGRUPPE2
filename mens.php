@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>    
-	<title>Clothes</title>
-</head>
-
-
 <?php
-session_start();
-require 'includes/dbh.inc.php';
-require 'top.php';
 
 if (!isset($_GET['clothes'])) {
-	exit();
+	header("location: ../APPGRUPPE2/index.php");
 }
 else {
+	session_start();
+	require 'includes/dbh.inc.php';
+	require 'top.php';
 	$checkClothes = $_GET['clothes'];
 
 	?>
-
+	<!DOCTYPE html>
+	<html>
+	<head>    
+		<title>Clothes</title>
+	</head>
 	<body>   <!-- Page Content -->
 		<div class="container">
 			<div class="row">

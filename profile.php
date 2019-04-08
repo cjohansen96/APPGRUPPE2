@@ -216,13 +216,12 @@ if ($resultCheck > 0) {
   			$('#error-oldpass span').addClass('form-error');
   			alert("Old and new password are the same!");
   		}
+  	}
+  	
+  	else {
   		if(/successpass/.test(loc) ) {
   			$('#success').addClass('form-success');
   			$('h3').text("Password changed!");
-  		}
-  		if(/successprofile/.test(loc) ) {
-  			$('#success').addClass('form-success');
-  			$('h3').text("Profile changed!");
   		}
   	}
 
@@ -253,8 +252,12 @@ if ($resultCheck > 0) {
   			$('#error-tlf label').addClass('form-error');
   			alert("Invalid phone number");
   		}
-
-
+  	}
+  	else {
+  		if(/successprofile/.test(loc) ) {
+  			$('#success').addClass('form-success');
+  			$('h3').text("Profile changed!");
+  		}
   	}
   });
 </script>

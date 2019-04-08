@@ -12,29 +12,26 @@ if(isset($_POST['save-submit'])) {
 // Validation
   /*
   	if (empty($name) || empty($lastName) || empty($email) || empty($tlf)) {
-  		header("Location: ../profile.php?errorfag=emptyfields&name".$name."&mail=".$email);
+  		header("Location: ../profile.php?error=emptyfields");
       exit();
-  	}*/
-  	if (!preg_match("/^[a-zA-Z]*$/", $name) && !preg_match("/^[a-zA-Z]*$/", $lastName) && !preg_match("/^[0-9]*$/", $tlfNumber) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    	header("Location: ../profile.php?error=invalidnamelnametlfemail");
-    	exit();
- 	  }
-  	else if (!preg_match("/^[a-zA-Z]*$/", $name)) {
-    	header("Location: ../profile.php?error=invalidname&name=".$name);
+  	}
+    */
+  	if (!preg_match("/^[a-zA-ZæøåÆØÅ]*$/", $name)) {
+    	header("Location: ../profile.php?errorprofile=invalidfname");
     	exit();
   	}
-  	else if (!preg_match("/^[a-zA-Z]*$/", $lastName)) {
-    	header("Location: ../profile.php?error=invalidlname&lname=".$LastName);
+  	else if (!preg_match("/^[a-zA-ZæøåÆØÅ]*$/", $lastName)) {
+    	header("Location: ../profile.php?errorprofile=invalidlname");
     	exit();
   	}
-  	else if (!preg_match("/^[0-9]*$/", $tlfNumber)) {
-    	header("Location: ../profile.php?error=invalidltlf&tlf=".$tlfNumber);
+    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      header("Location: ../profile.php?errorprofile=invalidmail");
+      exit();
+    }
+  	else if (!preg_match("/^[0-9]{8}+$/", $tlfNumber)) {
+    	header("Location: ../profile.php?errorprofile=invalidltlf");
     	exit();
   	}  
-  	else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    	header("Location: ../profile.php?error=invalidmail&mail=".$email);
-    	exit();
-  	}
 
     else {
       
@@ -44,14 +41,14 @@ if(isset($_POST['save-submit'])) {
       $stmt = mysqli_stmt_init($conn);
 
       if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../profile.php?error=sqlerror");
+        header("Location: ../profile.php?errorprofile=sqlerror");
         exit();
       }
       else {
         mysqli_stmt_bind_param($stmt, "ssss", $name, $lastName, $email, $tlfNumber); 
 
         mysqli_stmt_execute($stmt);
-        header("Location: ../profile.php?update=success");
+        header("Location: ../profile.php?update=successprofile");
         exit();
       }
       

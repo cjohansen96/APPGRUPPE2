@@ -20,8 +20,9 @@ else {
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">  
-					<div class="list-group text-center">
+					<div class="list-group">
 						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>
+						<button style="margin-top: 5px;" class="clear_filter">Clear Filter</button>
 
 						<div class="list-group">
 
@@ -201,6 +202,32 @@ else {
 			});
 
 			$('.search_submit').click(function(){
+				filter_data();
+			});
+
+			$('.clear_filter').click(function(){
+				var category = get_filter('category');
+				var brand = get_filter('brand');
+				var color = get_filter('color');
+				var size = get_filter('size');
+
+  				$("#search").val("");
+  				$("#minimum_price").val("1");
+  				$("#maximum_price").val("1000");
+
+				for (var i = 0; i < category.length; i++) {
+					$("input[value='" + category[i] + "']").prop('checked', false);
+				}
+				for (var i = 0; i < brand.length; i++) {
+					$("input[value='" + brand[i] + "']").prop('checked', false);
+				}
+				for (var i = 0; i < color.length; i++) {
+					$("input[value='" + color[i] + "']").prop('checked', false);
+				}
+				for (var i = 0; i < size.length; i++) {
+					$("input[value='" + size[i] + "']").prop('checked', false);
+				}
+
 				filter_data();
 			});
 

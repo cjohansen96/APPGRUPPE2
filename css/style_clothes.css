@@ -1,0 +1,20 @@
+.btn-primary{
+	background-color: #1D2228;
+	border:none;
+	color: white;
+	margin-bottom: 10px;
+}
+.btn-primary:hover{
+	background-color: #FB8122;
+	border:none;
+	color: #1D2228;
+}
+.btn-primary:not(:disabled):not(.disabled):focus{
+	background-color: #1D2228;
+	color: white;
+	box-shadow: none; 
+}
+.btn-primary:active {
+    outline: none;
+    border: none;
+}

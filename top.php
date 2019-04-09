@@ -28,7 +28,7 @@ require 'modal.php';
         <ul class="navbar-nav">
           
           <li class="dropdown" style="padding-right: 10px;">
-            <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2>MEN </h2></a>
+            <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2><a href="mens.php?clothes" style="text-decoration: none;">MEN </a></h2></a>
             <ul class="dropdown-menu text-center navbarbgclr">
               <li><a href="mens.php?clothes=Tshirt">T-shirts</a></li>
               <li><a href="mens.php?clothes=Sweater">Sweaters</a></li>
@@ -36,7 +36,7 @@ require 'modal.php';
             </ul>
           </li> 
           <li class="dropdown">
-            <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2> WOMEN</h2></a>
+            <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2><a href="womens.php?clothes" style="text-decoration: none;"> WOMEN</a></h2></a>
             <ul class="dropdown-menu text-center navbarbgclr">
               <li><a href="womens.php?clothes=Tshirt">T-shirts</a></li>
               <li><a href="womens.php?clothes=Sweater">Sweaters</a></li>
@@ -94,6 +94,12 @@ require 'modal.php';
 
 </div>
 </nav>
-
+<script type="text/javascript">
+  $('li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+});
+</script>
 </body>
 </html>

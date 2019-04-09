@@ -41,7 +41,7 @@ if(isset($_POST["action"])) {
   $output = '';
   while($row = mysqli_fetch_assoc($result)) {
    $output .= '
-   <div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
+   <div style="margin-bottom: 20px;" class="col-lg-3 col-md-6 col-sm-6">
    <form method="post">
    <div style="height: 400px;" class="card shadow text-center">
    <div class="card-block">
@@ -56,7 +56,7 @@ if(isset($_POST["action"])) {
    <h3>£ '.$row['Price'].'</h3>
    </div>
    <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
-   <a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+   <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
    </div>
    </div>
    </form>
@@ -118,7 +118,7 @@ else if (isset($_POST["actionWomen"])) {
    <h3>£ '.$row['Price'].'</h3>
    </div>
    <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
-   <a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+   <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
    </div>
    </div>
    </form>

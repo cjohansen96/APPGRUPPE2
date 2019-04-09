@@ -14,6 +14,7 @@ else {
 	<html>
 	<head>    
 		<title>Clothes</title>
+		<link rel="stylesheet" type="text/css" href="css/style_clothes.css">
 	</head>
 	<body>   <!-- Page Content -->
 		<div class="container">
@@ -21,8 +22,10 @@ else {
 				<div class="col-md-3">  
 					<div class="list-group">
 						<h1> Filter </h1> <br>
-						<h3>Category</h3>
-						<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
+						<a class="btn btn-primary" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
+						    Category
+						  </a>
+						<div class="collapse" id="collapseCategory" style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 							<?php
 
 							$query = "SELECT DISTINCT(Category) FROM Clothes";
@@ -42,7 +45,10 @@ else {
 					</div>
 
 					<div class="list-group">
-						<h3>Brand</h3>
+						<a class="btn btn-primary" data-toggle="collapse" href="#collapseBrand" role="button" aria-expanded="false" aria-controls="collapseBrand">
+						    Brand
+						  </a>
+						  <div class="collapse" id="collapseBrand">
 						<?php
 
 						$query = "
@@ -61,9 +67,12 @@ else {
 
 						?>
 					</div>
-
+					</div>
 					<div class="list-group">
-						<h3>Color</h3>
+						<a class="btn btn-primary" data-toggle="collapse" href="#collapseColor" role="button" aria-expanded="false" aria-controls="collapseColor">
+						    Color
+						  </a>
+						  <div class="collapse" id="collapseColor">
 						<?php
 						$query = "
 						SELECT DISTINCT(Color) FROM Clothes";
@@ -79,9 +88,12 @@ else {
 						}
 						?> 
 					</div>
-
+				</div>
 					<div class="list-group">
-						<h3>Size</h3>
+						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSizes" role="button" aria-expanded="false" aria-controls="collapseSizes">
+					    Size
+					  </a>
+					  <div class="collapse" id="collapseSizes">
 						<?php
 						$query = "
 						SELECT DISTINCT(Size) FROM Clothes";
@@ -97,8 +109,8 @@ else {
 						}
 						?> 
 					</div>
-
 				</div>
+			</div>
 
 				<div class="col-md-9">
 					<br />

@@ -154,6 +154,34 @@ if ($resultCheck > 0) {
 		<!--Edit password content -->
 		<div class="row">
 			<div class="col-sm text-center">
+				<p>
+					<a class="btn btn-secondary editbtn" data-toggle="collapse" href="#referFriend" role="button" aria-expanded="false" 	aria-controls="	collapseExample">
+						REFER A FRIEND
+					</a>
+				</p>
+			</div>
+		</div>
+
+		<!-- Collapse form for refering a friend -->
+		<div class="collapse" id="referFriend">
+			<form action="includes/edit-pwd.inc.php" class="text-center" method="POST">
+				<p> Refer a friend and get 30% cupon on any clothes you want! </p>
+				<div id="error-oldpass"> 
+					<span>Your friends email:</span>
+				</div>
+				<input id="oldpass" type="password" name="old-pwd"> <br>
+
+				<button type="submit" class="btn btn-secondary editbtn" name="pwd-submit">Refer
+				</button> <br> <br>
+			</form>
+		</div>
+
+		<hr>
+		<br>
+
+		<!--QUIZ CONTENT -->
+		<div class="row">
+			<div class="col-sm text-center">
 				<h5>Join our monthly quiz, and hava a chance to win cool prices!</h5> <br>
 				<p>
 					<a class="btn btn-secondary editbtn"href="quiz.php" role="button">
@@ -217,7 +245,7 @@ if ($resultCheck > 0) {
   			alert("Old and new password are the same!");
   		}
   	}
-  	
+
   	else {
   		if(/successpass/.test(loc) ) {
   			$('#success').addClass('form-success');

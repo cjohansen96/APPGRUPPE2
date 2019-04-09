@@ -15,8 +15,8 @@ body{
 	border:none;
 }
 .btn-danger:hover{
-	background-color: #FB8122;
-	color: black;
+	background-color: #1D2228;
+	color: white;
 }
 .btn.btn-danger:active{
 	background-color: #FB8122;

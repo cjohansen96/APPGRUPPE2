@@ -53,12 +53,15 @@ require 'slideshow.php';
     </div>
   </div>
 </div>
-<div class="container" style="height: 300px; background-color: #1D2228; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center; margin-bottom: 20px;">
-  <div class="row">
+<div class="container" style="height: 300px; background: url('Bilder/bildegizmo.png')no-repeat center center;-webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center; margin-bottom: 20px;">
+  <div class="row" >
         <!--
    <a href="#"><img src="Bilder/sale-banner4.webp" style="width: 100%; class="img-fluid" alt="Sales banner"></a>
  -->
- <div >
+ <div>
    <a class="btn btn-danger btn-lg text-center mx-5" role="button" href="mens.php?clothes">SHOP MEN ></a>
  </div>
  <div >
@@ -82,28 +85,7 @@ echo '
 ';
 }
 ?>
-<div class="container" style="margin-bottom: 10px;">
-  <div class="row">
-    <div class="col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h4>Shipping across Europe</h4>
-    <i class="fas fa-shipping-fast " style="font-size: 6em;"></i>
-  </div>
-  <div class="col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h4>Fast and easy shopping</h4>
-    <i class="fas fa-shopping-bag" style="font-size: 6em;"></i>
-  </div>
-  <div class="col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h4>Great return policy</h4>
-    <i class="fas fa-exchange-alt" style="font-size: 6em;"></i>
-  </div>
-  <div class="col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h4>Secure payment methods</h4>
-    <i class="fab fa-cc-visa" style="font-size: 4em;"></i>
-    <i class="fab fa-cc-paypal" style="font-size: 4em;"></i>
-    <i class="fab fa-cc-mastercard" style="font-size: 4em;"></i>
-  </div>
-</div>
-</div>
+
 </body>
 
 <?php

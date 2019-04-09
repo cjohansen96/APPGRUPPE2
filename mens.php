@@ -21,16 +21,22 @@ else {
 			<div class="row">
 				<div class="col-md-3">  
 					<div class="list-group text-center">
-						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>	
+						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>
 
-						<div class="list-group">		
-							<h3>Price</h3>
+						<div class="list-group">
+
+						<a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false" aria-controls="collapsePrice">
+							Price
+						</a>
+						<div class="collapse" id="collapsePrice">		
 							<span>Min price:</span>
-							<input id="minimum_price" value="0">
+							<input id="minimum_price" value="1">
+							<br>
 							<span>Max price:</span>
 							<input id="maximum_price" value="1000">
-							<button class="price_submit">Submit</button>
-						</div>  <br>
+							<button style="margin-top: 5px;" class="price_submit btn btn-primary">Submit</button>
+						</div>
+						</div> 
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
 

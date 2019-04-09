@@ -25,13 +25,13 @@ else {
 
 						<div class="list-group">
 
-						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapsePrice">
+						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
 							Search
 						</a>
 						<div class="collapse" id="collapseSearch">		
 							<span>Search:</span>
 							<input id="search">
-							<button style="margin-top: 5px;" class="search_submit btn btn-primary">Submit</button>
+							<button style="margin-top: 5px; width: 70px;" class="search_submit btn btn-primary"><span class="fas fa-search"></span></button>
 						</div>
 						</div>
 						

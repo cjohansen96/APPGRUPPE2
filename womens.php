@@ -147,6 +147,8 @@ else {
 			function filter_data()
 			{
 				var actionWomen = 'fetch_data';
+				var minimum_price = $('#minimum_price').val();
+				var maximum_price = $('#maximum_price').val();
 				var category = get_filter('category');
 				var brand = get_filter('brand');
 				var color = get_filter('color');
@@ -154,7 +156,7 @@ else {
 				$.ajax({ //Ajax code
 					url:"includes/fetch_data.inc.php",
 					method:"POST",
-					data:{actionWomen:actionWomen, category:category, brand:brand, color:color, size:size}, //Passing variables to fetch_data.inc.php
+					data:{actionWomen:actionWomen,  minimum_price:minimum_price, maximum_price:maximum_price, category:category, brand:brand, color:color, size:size}, //Passing variables to fetch_data.inc.php
 					success:function(data){		//Sucsess callback function
 						$('.filter_data').html(data); // Pasting html data into the class filter_data
 					}
@@ -176,6 +178,10 @@ else {
 			filter_data();
 
 			$('.common_selector').click(function(){ // A fuction that needs to run, when it is clicked
+				filter_data();
+			});
+
+			$('.price_submit').click(function(){
 				filter_data();
 			});
 

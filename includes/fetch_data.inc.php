@@ -76,6 +76,12 @@ else if (isset($_POST["actionWomen"])) {
   $query = "
   SELECT * FROM Clothes WHERE Gender = 'F'";
 
+  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
+  {
+    $query .= "
+    AND Price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
+    ";
+  }
 
   if(isset($_POST["category"]))  {
     $category_filter = implode("','", $_POST["category"]);

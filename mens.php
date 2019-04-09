@@ -22,12 +22,13 @@ else {
 				<div class="col-md-3">  
 					<div class="list-group">
 						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>
-						<button style="margin-top: 5px;" class="clear_filter">Clear Filter</button>
+
+						<button style="margin-top: 5px;" class="search_submit btn btn-primary clear_filter">Clear Filter <i style="font-size: 0.8em" class="fas fa-undo-alt"></i></button>
 
 						<div class="list-group">
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
-							Search
+							Search <i style="font-size: 0.8em" class="fas fa-search"></i>
 						</a>
 						<div class="collapse" id="collapseSearch">		
 							<span>Search:</span>
@@ -39,7 +40,7 @@ else {
 						<div class="list-group">
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false" aria-controls="collapsePrice">
-							Price
+							Price <i style="font-size: 0.8em" class="fas fa-euro-sign"></i>
 						</a>
 						<div class="collapse" id="collapsePrice">		
 							<span>Min price:</span>
@@ -53,7 +54,7 @@ else {
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
 
-							Category
+							Category <i style="font-size: 0.8em" class="fas fa-book"></i>
 						</a>
 						<div class="collapse" id="collapseCategory" style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 							<?php

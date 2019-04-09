@@ -13,26 +13,6 @@
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
       <!-- Grid row -->
-      <div class="row text-center" style="margin-bottom: 20px;border-bottom: 1px solid #e8e8e8;">
-    <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h5>Shipping across Europe</h5>
-    <i class="fas fa-shipping-fast " style="font-size: 3.5em;"></i>
-  </div>
-  <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h5>Fast and easy shopping</h5>
-    <i class="fas fa-shopping-bag" style="font-size: 3.5em;"></i>
-  </div>
-  <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h5>Great return policy</h5>
-    <i class="fas fa-exchange-alt" style="font-size: 3.5em;"></i>
-  </div>
-  <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
-    <h5>Secure payment methods</h5>
-    <i class="fab fa-cc-visa" style="font-size: 3em;"></i>
-    <i class="fab fa-cc-paypal" style="font-size: 3em;"></i>
-    <i class="fab fa-cc-mastercard" style="font-size: 3em;"></i>
-  </div>
-</div>
       <div class="row">
         <!-- Grid column -->
         <div class="col-md-6 mt-md-0 mt-3">
@@ -87,6 +67,26 @@
         </div>
       </div>
     </div>
+    <div class="row text-center" style="margin-bottom: 20px;border-top: 1px solid #e8e8e8;">
+    <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
+    <h5>Shipping across Europe</h5>
+    <i class="fas fa-shipping-fast " style="font-size: 3.5em;"></i>
+  </div>
+  <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
+    <h5>Fast and easy shopping</h5>
+    <i class="fas fa-shopping-bag" style="font-size: 3.5em;"></i>
+  </div>
+  <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
+    <h5>Great return policy</h5>
+    <i class="fas fa-exchange-alt" style="font-size: 3.5em;"></i>
+  </div>
+  <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
+    <h5>Secure payment methods</h5>
+    <i class="fab fa-cc-visa" style="font-size: 3em;"></i>
+    <i class="fab fa-cc-paypal" style="font-size: 3em;"></i>
+    <i class="fab fa-cc-mastercard" style="font-size: 3em;"></i>
+  </div>
+</div>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
       <a href="#"> Exiztshopping.com</a>

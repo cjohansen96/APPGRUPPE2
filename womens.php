@@ -20,8 +20,8 @@ else {
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">  
-					<div class="list-group">
-						<h1> Filter </h1> <br>
+					<div class="list-group text-center">
+						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
 						    Category
 						  </a>

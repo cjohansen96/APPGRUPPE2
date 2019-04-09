@@ -53,7 +53,7 @@ require 'slideshow.php';
     </div>
   </div>
 </div>
-<div class="container" style="height: 300px; background-color: #1D2228; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center;">
+<div class="container" style="height: 300px; background-color: #1D2228; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center; margin-bottom: 20px;">
   <div class="row">
         <!--
    <a href="#"><img src="Bilder/sale-banner4.webp" style="width: 100%; class="img-fluid" alt="Sales banner"></a>
@@ -66,42 +66,7 @@ require 'slideshow.php';
  </div>
 </div>
 </div>
-<div style="margin-top: 20px; margin-bottom: 10px; " class="container">
-  <div class="row">    
-    <div class="col-sm-6 col-md-3 col-lg-3" style=" margin-bottom: 10px;">
-      <a href="">
-        <img src="Bilder/clothes/11.png" class="img-fluid" alt="">
-        <div class="carousel-caption">
-          <h1 style="font-size: 15px; background-color: #1D2228;">New sweaters</h1>
-        </div>
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-3 col-lg-3" style=" margin-bottom: 10px;">
-      <a href="">
-        <img src="Bilder/clothes/18.png" class="img-fluid" alt="">
-        <div class="carousel-caption">
-          <h1 style="font-size: 15px; background-color: #1D2228;">New jeans</h1>
-        </div>
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-3 col-lg-3" style=" margin-bottom: 10px;">
-      <a href="">
-        <img src="Bilder/clothes/5.png" class="img-fluid" alt="">
-        <div class="carousel-caption">
-          <h1 style="font-size: 15px; background-color: #1D2228;">New T-shirts</h1>
-        </div>
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-3 col-lg-3" style=" margin-bottom: 10px;">
-      <a href="">
-        <img src="Bilder/clothes/14.png" class="img-fluid" alt="">
-        <div class="carousel-caption">
-          <h1 style="font-size: 15px; background-color: #1D2228;">New shorts</h1>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
+
 <?php
 if (isset($_SESSION['customerId'])) {
 echo '
@@ -109,7 +74,7 @@ echo '
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-      <a class="btn btn-primary btn-block text-center" href="quiz.php" role="button" style=" background-color: #1D2228; height: 150px; border-radius: 4px; border: 5px solid #FB8122;"><h1 id="quiztxt">CLICK HERE TO ENTER OUR MONTHLY CONTEST FOR A CHANCE TO WIN FREE PRIZES!</h1></a>
+      <a class="btn btn-primary btn-block quizbtn text-center" href="quiz.php" role="button" style=" background-color: #1D2228; height: 150px; border-radius: 4px; border: 5px solid #FB8122;"><h1 id="quiztxt">CLICK HERE TO ENTER OUR MONTHLY CONTEST FOR A CHANCE TO WIN FREE PRIZES!</h1></a>
     </div>
     <div class="col-sm-2"></div>
   </div>

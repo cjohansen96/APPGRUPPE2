@@ -21,10 +21,21 @@ else {
 			<div class="row">
 				<div class="col-md-3">  
 					<div class="list-group text-center">
-						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>
+						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>	
+
+						<div class="list-group">		
+							<h3>Price</h3>
+							<span>Min price:</span>
+							<input id="minimum_price" value="0">
+							<span>Max price:</span>
+							<input id="maximum_price" value="1000">
+							<button class="price_submit">Submit</button>
+						</div>  <br>
+
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
-						    Category
-						  </a>
+
+							Category
+						</a>
 						<div class="collapse" id="collapseCategory" style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 							<?php
 
@@ -46,71 +57,71 @@ else {
 
 					<div class="list-group">
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseBrand" role="button" aria-expanded="false" aria-controls="collapseBrand">
-						    Brand
-						  </a>
-						  <div class="collapse" id="collapseBrand">
-						<?php
+							Brand
+						</a>
+						<div class="collapse" id="collapseBrand">
+							<?php
 
-						$query = "
-						SELECT DISTINCT(Brand) FROM Clothes";
-						$result = mysqli_query($conn,$query);
+							$query = "
+							SELECT DISTINCT(Brand) FROM Clothes";
+							$result = mysqli_query($conn,$query);
 
-						while ($row = mysqli_fetch_assoc($result)) 
-						{
+							while ($row = mysqli_fetch_assoc($result)) 
+							{
+								?>
+
+								<div class="list-group-item checkbox">
+									<label><input name="cat" type="checkbox" class="common_selector brand" value="<?php echo $row['Brand']; ?>"  > <?php echo $row['Brand']; ?></label>
+								</div>
+								<?php    
+							}
+
 							?>
-
-							<div class="list-group-item checkbox">
-								<label><input name="cat" type="checkbox" class="common_selector brand" value="<?php echo $row['Brand']; ?>"  > <?php echo $row['Brand']; ?></label>
-							</div>
-							<?php    
-						}
-
-						?>
-					</div>
+						</div>
 					</div>
 					<div class="list-group">
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseColor" role="button" aria-expanded="false" aria-controls="collapseColor">
-						    Color
-						  </a>
-						  <div class="collapse" id="collapseColor">
-						<?php
-						$query = "
-						SELECT DISTINCT(Color) FROM Clothes";
-						$result = mysqli_query($conn,$query);
-
-						while ($row = mysqli_fetch_assoc($result)) 
-						{
-							?>
-							<div class="list-group-item checkbox">
-								<label><input type="checkbox" class="common_selector color" value="<?php echo $row['Color']; ?>"  > <?php echo $row['Color']; ?></label>
-							</div>
+							Color
+						</a>
+						<div class="collapse" id="collapseColor">
 							<?php
-						}
-						?> 
+							$query = "
+							SELECT DISTINCT(Color) FROM Clothes";
+							$result = mysqli_query($conn,$query);
+
+							while ($row = mysqli_fetch_assoc($result)) 
+							{
+								?>
+								<div class="list-group-item checkbox">
+									<label><input type="checkbox" class="common_selector color" value="<?php echo $row['Color']; ?>"  > <?php echo $row['Color']; ?></label>
+								</div>
+								<?php
+							}
+							?> 
+						</div>
 					</div>
-				</div>
 					<div class="list-group">
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSizes" role="button" aria-expanded="false" aria-controls="collapseSizes">
-					    Size
-					  </a>
-					  <div class="collapse" id="collapseSizes">
-						<?php
-						$query = "
-						SELECT DISTINCT(Size) FROM Clothes";
-						$result = mysqli_query($conn,$query);
-
-						while ($row = mysqli_fetch_assoc($result)) 
-						{
-							?>
-							<div class="list-group-item checkbox">
-								<label><input type="checkbox" class="common_selector size" value="<?php echo $row['Size']; ?>"  > <?php echo $row['Size']; ?></label>
-							</div>
+							Size
+						</a>
+						<div class="collapse" id="collapseSizes">
 							<?php
-						}
-						?> 
+							$query = "
+							SELECT DISTINCT(Size) FROM Clothes";
+							$result = mysqli_query($conn,$query);
+
+							while ($row = mysqli_fetch_assoc($result)) 
+							{
+								?>
+								<div class="list-group-item checkbox">
+									<label><input type="checkbox" class="common_selector size" value="<?php echo $row['Size']; ?>"  > <?php echo $row['Size']; ?></label>
+								</div>
+								<?php
+							}
+							?> 
+						</div>
 					</div>
 				</div>
-			</div>
 
 				<div class="col-md-9">
 					<br />
@@ -132,6 +143,8 @@ else {
 			function filter_data()
 			{
 				var action = 'fetch_data';
+				var minimum_price = $('#minimum_price').val();
+				var maximum_price = $('#maximum_price').val();
 				var category = get_filter('category');
 				var brand = get_filter('brand');
 				var color = get_filter('color');
@@ -139,7 +152,7 @@ else {
 				$.ajax({ //Ajax code
 					url:"includes/fetch_data.inc.php",
 					method:"POST",
-					data:{action:action, category:category, brand:brand, color:color, size:size}, //Passing variables to fetch_data.inc.php
+					data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price,category:category, brand:brand, color:color, size:size}, //Passing variables to fetch_data.inc.php
 					success:function(data){		//Sucsess callback function
 						$('.filter_data').html(data); // Pasting html data into the class filter_data
 					}
@@ -161,6 +174,10 @@ else {
 			filter_data();
 
 			$('.common_selector').click(function(){ // A fuction that needs to run, when it is clicked
+				filter_data();
+			});
+
+			$('.price_submit').click(function(){
 				filter_data();
 			});
 

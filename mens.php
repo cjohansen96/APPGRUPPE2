@@ -25,6 +25,18 @@ else {
 
 						<div class="list-group">
 
+						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapsePrice">
+							Search
+						</a>
+						<div class="collapse" id="collapseSearch">		
+							<span>Search:</span>
+							<input id="search">
+							<button style="margin-top: 5px;" class="search_submit btn btn-primary">Submit</button>
+						</div>
+						</div> 
+
+						<div class="list-group">
+
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false" aria-controls="collapsePrice">
 							Price
 						</a>
@@ -149,6 +161,7 @@ else {
 			function filter_data()
 			{
 				var action = 'fetch_data';
+				var search = $('#search').val();
 				var minimum_price = $('#minimum_price').val();
 				var maximum_price = $('#maximum_price').val();
 				var category = get_filter('category');
@@ -158,7 +171,7 @@ else {
 				$.ajax({ //Ajax code
 					url:"includes/fetch_data.inc.php",
 					method:"POST",
-					data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price,category:category, brand:brand, color:color, size:size}, //Passing variables to fetch_data.inc.php
+					data:{action:action, search:search, minimum_price:minimum_price, maximum_price:maximum_price,category:category, brand:brand, color:color, size:size}, //Passing variables to fetch_data.inc.php
 					success:function(data){		//Sucsess callback function
 						$('.filter_data').html(data); // Pasting html data into the class filter_data
 					}
@@ -184,6 +197,10 @@ else {
 			});
 
 			$('.price_submit').click(function(){
+				filter_data();
+			});
+
+			$('.search_submit').click(function(){
 				filter_data();
 			});
 

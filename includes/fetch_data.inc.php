@@ -5,11 +5,19 @@
 include('dbh.inc.php');
 
 if(isset($_POST["action"])) {
-  $query = "
-  SELECT * FROM Clothes WHERE Gender = 'M'";
+  $query = "SELECT * FROM Clothes WHERE Gender = 'M'";
 
-  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
-  {
+  if(!preg_match("/^[a-zA-Z]*$/", $_POST['search'])) {
+    $query .= "
+    AND Name LIKE '%%'";
+  }
+
+  else if(isset($_POST["search"]) && !empty($_POST["search"])) {
+    $query .= "
+    AND Name LIKE '%".$_POST["search"]."%'";
+  }
+
+  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"])){
     $query .= "
     AND Price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
     ";
@@ -45,6 +53,7 @@ if(isset($_POST["action"])) {
 
   $result = mysqli_query($conn,$query); 
   $output = '';
+
   while($row = mysqli_fetch_assoc($result)) {
    $output .= '
    <div style="margin-bottom: 20px;" class="col-lg-3 col-md-6 col-sm-6">
@@ -69,12 +78,21 @@ if(isset($_POST["action"])) {
    </div>';
  }
 
-
  echo $output;
 }
 else if (isset($_POST["actionWomen"])) {
   $query = "
   SELECT * FROM Clothes WHERE Gender = 'F'";
+
+  if(!preg_match("/^[a-zA-Z]*$/", $_POST['search'])) {
+    $query .= "
+    AND Name LIKE '%%'";
+  }
+
+  else if(isset($_POST["search"]) && !empty($_POST["search"])) {
+    $query .= "
+    AND Name LIKE '%".$_POST["search"]."%'";
+  }
 
   if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
   {

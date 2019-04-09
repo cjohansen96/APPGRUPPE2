@@ -21,7 +21,7 @@ require 'slideshow.php';
   <div class="row">
     <div class="col-sm-6 col-md-3 col-lg-3" style=" margin-bottom: 10px;">
       <a href="mens.php?clothes">
-        <img src="Bilder/mens-fashion4.png" class="img-fluid" alt="mens fashion">
+        <img src="Bilder/mens-fashion5.png" class="img-fluid" alt="mens fashion">
         <div class="carousel-caption">
           <h1 style="font-size: 15px; background-color: #1D2228;">Mens spring fashions</h1>
         </div>

@@ -1,69 +1,48 @@
 <?php
 session_start();
-require 'top.php';
-
-
+require_once('includes/dbh.inc.php'); 
+include('top.php');
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Clothes</title>
-	<link rel="stylesheet" type="text/css" href="css/style_clothes.css">
-	<script src="js/cart.js" async></script>
-</head>
-
-<body>
-	<h1>Shopping Cart</h1>
-
-  <a href="{#cart.urls.continueShopping}" class="continue-shopping">Continue Shopping</a>
-  <a href="{#cart.urls.checkout}" class="checkout-button">Checkout</a>
-  <table cellspacing="0" class="shopping-cart">
-    <thead>
-      <tr class="headings">
-        <th class="link">&nbsp;</td>
-        <th class="product">Item</td>
-        <th class="price">Price</td>
-        <th class="quantity">Quantity</td>
-        <th class="price">Total</td>
-      </tr>
-    </thead>
-    <tbody>
-   	
-      <tr> 
-        <td class="link"><label></label></td>
-        <td class="product">
-          <div class="product-img"><a></a></div>
-          <div class="product-name">
-            <a href="{#product.url}"></a>
-          </div>
-        </td>
-        <td class="price">
-        </td>
-        <td class="quantity">
-        </td>
-        <td class="price"></td>
-      </tr>
  
-      <tr class="totals">
-        <td colspan="2"><input type="submit" name="submit" value="Update cart" /></td>
-        <td class="quantity-span" colspan="2">Total</td>
-        <td class="price"></td>
-      </tr> 
-    </tbody>
-  </table>
-
-  </div>
-
-<div style="clear: both;"></div>
-<button submit href="index.php" class="continue-shopping">Continue Shopping</button>
-<a href="" class="checkout-button">Checkout</a>
-</body>
-
-<?php
-require 'bottom.php';
+<div class="container">
+<?php 
+$items = $_SESSION['cart'];
+$cartitems = explode(",", $items);
 ?>
-
-</html>
-
+	<div class="row">
+	  <table class="table">
+	  	<tr>
+	  		<th>S.NO</th>
+	  		<th>Item Name</th>
+	  		<th>Price</th>
+	  	</tr>
+		<?php
+		$total = 0;
+		$i=1;
+		 foreach ($cartitems as $key=>$id) {
+			$sql = "SELECT * FROM Clothes WHERE IdClothes = 4";
+			$res=mysqli_query($conn, $sql);
+			$r = mysqli_fetch_assoc($res);
+		?>	  	
+	  	<tr>
+	  		<td><?php echo $i; ?></td>
+	  		<td>$<?php echo $r['Name']; ?></td>
+	  		<td><a href="delcart.php?remove=<?php echo $key; ?>">Remove</a> <?php echo $r['Price']; ?></td>
+	  	</tr>
+		<?php 
+			$total = $total + $r['Price'];
+			$i++; 
+			} 
+		?>
+		<tr>
+			<td><strong>Total Price</strong></td>
+			<td><strong>$<?php echo $total; ?></strong></td>
+			<td><a href="#" class="btn btn-info">Checkout</a></td>
+		</tr>
+	  </table>
+	  
+	</div>
+ 
+</div>
+ 
+<?php include('bottom.php'); ?>

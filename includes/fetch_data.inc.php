@@ -16,7 +16,7 @@ if(isset($_GET['status']) & !empty($_GET['status'])){
 
 
 if(isset($_POST["action"])) {
-  $query = "SELECT * FROM Clothes WHERE Gender = 'M'";
+  $query = "SELECT * FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'M'";
 
   if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
     $query .= "
@@ -112,8 +112,7 @@ if(isset($_POST["action"])) {
 
 }
 else if (isset($_POST["actionWomen"])) {
-  $query = "
-  SELECT * FROM Clothes WHERE Gender = 'F'";
+  $query = "SELECT * FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'F'";
 
   if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
     $query .= "

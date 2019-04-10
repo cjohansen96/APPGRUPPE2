@@ -23,6 +23,15 @@ if ($resultCheck > 0) {
 	}
 }
 
+/* Spørring for quiz */
+$sql = "SELECT * FROM CustomerScore WHERE Customer_IdCustomer = '$id' AND Category_IdCategory = 2";
+$result = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($result);
+$quizTaken = false;
+
+if ($resultCheck > 0) {
+	$quizTaken = true;
+}
 
 ?>
 
@@ -182,9 +191,9 @@ if ($resultCheck > 0) {
 		<!--QUIZ CONTENT -->
 		<div class="row">
 			<div class="col-sm text-center">
-				<h5>Join our monthly quiz, and hava a chance to win cool prices!</h5> <br>
+				<h5 id="quiz-text">Join our monthly quiz, and hava a chance to win cool prices!</h5> <br>
 				<p>
-					<a class="btn btn-secondary editbtn"href="quiz.php" role="button">
+					<a id="quiz-button" class="btn btn-secondary editbtn"href="quiz.php" role="button">
 						QUIZ
 					</a>
 				</p>
@@ -197,6 +206,12 @@ if ($resultCheck > 0) {
 
 <script>
 	$(function() {
+	var quizTaken = '<?php echo $quizTaken ?>';
+	if (quizTaken) {
+		$('#quiz-button').addClass('disabled');
+		$('#quiz-text').text('You have already taken this monthly quiz');
+	}
+
   	var loc = window.location.href; // returns the full URL
   	if(/errorpass/.test(loc) ) {
   		$('#editPassword').addClass('show');
@@ -289,11 +304,18 @@ if ($resultCheck > 0) {
   			alert("Invalid phone number");
   		}
   	}
+
   	else {
   		if(/successprofile/.test(loc) ) {
   			$('#success').addClass('form-success');
   			$('h3').text("Profile changed!");
   		}
+  	}
+
+  	if(/quizsubmitted/.test(loc)) {
+  			$('#success').addClass('form-success');
+  			$('h3').text("Quiz submitted!");
+
   	}
   });
 </script>

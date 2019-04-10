@@ -21,11 +21,11 @@ else {
 			<div class="row">
 				<div class="col-md-3">  
 					<div class="list-group">
-						<h1> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>
+						<h1  class="text-center"> Filter <span style="font-size: 0.8em;" class="fas fa-sliders-h"></span></h1> <br>
 
-						<button style="margin-top: 5px;" class="search_submit btn btn-primary clear_filter">Clear Filter <i style="font-size: 0.8em" class="fas fa-undo-alt"></i></button>
+						<button style="margin-top: 5px;" class="search_submit btn btn-primary clear_filter" id="clearbtn">Clear Filter <i style="font-size: 0.8em" class="fas fa-undo-alt"></i></button>
 
-						<div class="list-group">
+						<div class="list-group text-center">
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
 							Search <i style="font-size: 0.8em" class="fas fa-search"></i>
@@ -37,7 +37,7 @@ else {
 						</div>
 						</div> 
 
-						<div class="list-group">
+						<div class="list-group text-center">
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false" aria-controls="collapsePrice">
 							Price <i style="font-size: 0.8em" class="fas fa-euro-sign"></i>

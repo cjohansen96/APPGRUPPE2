@@ -2,12 +2,38 @@
 session_start();
 require_once('includes/dbh.inc.php'); 
 include('top.php');
+
+if(isset($_GET['id']) && !empty($_GET['id'])){
+  if(isset($_SESSION['id']) && !empty($_SESSION['id'])){
+    $items = $_SESSION['id'];
+    $cartitems = explode(",", $items);
+    if(in_array($_GET['id'], $cartitems)){
+      echo('status=incart');
+    }else{
+      $items .= "," . $_GET['id'];
+      $_SESSION['cart'] = $items;
+      echo('status=success');
+        
+    }
+ 
+  }else{
+    $items = $_GET['id'];
+    $_SESSION['cart'] = $items;
+    echo('status=success');
+  }
+    
+}else{
+    echo('status=failed');
+  }
+
+
 ?>
  
 <div class="container">
 <?php 
 $items = $_SESSION['cart'];
 $cartitems = explode(",", $items);
+//print_r($cartitems);
 ?>
 	<div class="row">
 	  <table class="table">
@@ -20,7 +46,7 @@ $cartitems = explode(",", $items);
 		$total = 0;
 		$i=1;
 		 foreach ($cartitems as $key=>$id) {
-			$sql = "SELECT * FROM Clothes WHERE IdClothes = 4";
+			$sql = "SELECT * FROM Clothes WHERE IdClothes = $id";
 			$res=mysqli_query($conn, $sql);
 			$r = mysqli_fetch_assoc($res);
 		?>	  	

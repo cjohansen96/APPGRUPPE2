@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    <div class="row text-center" style="margin-bottom: 20px;border-top: 1px solid #e8e8e8;">
+    <div class="row text-center">
     <div class="col-mb-12 col-sm-6 col-md-3 col-lg-3 text-center" style="margin-bottom: 10px;">
     <h5>Shipping across Europe</h5>
     <i class="fas fa-shipping-fast " style="font-size: 3.5em;"></i>

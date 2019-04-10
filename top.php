@@ -26,7 +26,7 @@ require 'modal.php';
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
-          
+
           <li class="dropdown" style="padding-right: 10px;">
             <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2><a href="mens.php?clothes" style="text-decoration: none;">MEN </a></h2></a>
             <ul class="dropdown-menu text-center navbarbgclr">
@@ -43,51 +43,55 @@ require 'modal.php';
               <li><a href="womens.php?clothes=Jeans">Jeans</a></li>
             </ul>
           </li>
-    <!-- dropdown for cart and login for smaller screens -->
+
+
+          <h2><a href="sale.php" style="text-decoration: none; color: #ff165f;">&nbsp; SALE </a></h2>
+        </ul>
+        <!-- dropdown for cart and login for smaller screens -->
+        <?php
+        if(!isset($_SESSION['customerId'])) {
+          echo '<li class="dropdown" id="login">
+          <a href="#modalLoginForm" data-toggle="modal" style="text-decoration: none;"><h2> LOGIN</h2></a>
+          </li>';
+        }
+        elseif (isset($_SESSION['customerId'])) {
+          echo '<li class="dropdown" id="login">
+          <a href="profile.php" style="text-decoration: none;"><h2> MY PROFILE</h2></a>
+          </li>';
+          echo '<li class="dropdown" id="login">
+          <a href="includes/logout.inc.php" style="text-decoration: none;"><h2> LOGOUT</h2></a>
+          </li>';
+        }
+        ?>
+        <li class="dropdown" id="cart">
+          <a href="cart.php"  style="text-decoration: none;"><h2> CART</h2></a>
+        </li>
+
+      </ul>
+    </div>
+    <div id="searchbar">
+      <form class="form-inline" action="/action_page.php">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-default" type="submit"> <span class="fas fa-search"></span> </button>
+      </form>
+    </div>
+
+
+
+
     <?php
+
     if(!isset($_SESSION['customerId'])) {
-    echo '<li class="dropdown" id="login">
-      <a href="#modalLoginForm" data-toggle="modal" style="text-decoration: none;"><h2> LOGIN</h2></a>
-    </li>';
+      echo '<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalLoginForm"> <span class="fas fa-user"></span> LOGIN</button>';
     }
     elseif (isset($_SESSION['customerId'])) {
-      echo '<li class="dropdown" id="login">
-      <a href="profile.php" style="text-decoration: none;"><h2> MY PROFILE</h2></a>
-      </li>';
-      echo '<li class="dropdown" id="login">
-      <a href="includes/logout.inc.php" style="text-decoration: none;"><h2> LOGOUT</h2></a>
-      </li>';
+      echo '<a href="profile.php"  class="btn btn-default"> <span class="fas fa-user"></span> My profile</a>';
+      echo '<a href="includes/logout.inc.php" class="btn btn-default"> <span class="fas fa-sign-out-alt"> </span> </a>';
     }
+
     ?>
-      <li class="dropdown" id="cart">
-      <a href="cart.php"  style="text-decoration: none;"><h2> CART</h2></a>
-    </li>
- 
-</ul>
-</div>
-<div id="searchbar">
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-default" type="submit"> <span class="fas fa-search"></span> </button>
-  </form>
-</div>
 
-
-
-
-<?php
-
-  if(!isset($_SESSION['customerId'])) {
-    echo '<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalLoginForm"> <span class="fas fa-user"></span> LOGIN</button>';
-  }
-  elseif (isset($_SESSION['customerId'])) {
-    echo '<a href="profile.php"  class="btn btn-default"> <span class="fas fa-user"></span> My profile</a>';
-    echo '<a href="includes/logout.inc.php" class="btn btn-default"> <span class="fas fa-sign-out-alt"> </span> </a>';
-  }
-  
-?>
-
-<a href="cart.php" class="btn btn-default"><span class="fas fa-shopping-cart"></span></a>
+    <a href="cart.php" class="btn btn-default"><span class="fas fa-shopping-cart"></span></a>
 <!--
 <button href="cart.php" type="button" class="btn btn-default"> <span class="fas fa-shopping-cart"></span> </button>
 -->
@@ -96,10 +100,10 @@ require 'modal.php';
 </nav>
 <script type="text/javascript">
   $('li.dropdown').hover(function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-}, function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-});
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
 </script>
 </body>
 </html>

@@ -74,7 +74,7 @@ if(isset($_POST["action"])) {
      $output .= '
      <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
      <form method="post" action="cart.php">
-      <div style="height: 400px;" class="card shadow text-center">
+     <div style="height: 400px;" class="card shadow text-center">
      <div class="card-block">
      <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
      <div class="card-text">
@@ -88,7 +88,7 @@ if(isset($_POST["action"])) {
      </div>
      <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
      <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-      href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button" type ="submit">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+     href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button" type ="submit">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
 
 
      </div>
@@ -168,7 +168,7 @@ else if (isset($_POST["actionWomen"])) {
      $output .= '
      <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
      <form method="post" action="">
-      <div style="height: 400px;" class="card shadow text-center">
+     <div style="height: 400px;" class="card shadow text-center">
      <div class="card-block">
      <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
      <div class="card-text">
@@ -182,7 +182,7 @@ else if (isset($_POST["actionWomen"])) {
      </div>
      <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
      <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-      href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+     href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
      </div>
      </div>
      </form>
@@ -277,7 +277,7 @@ else if (isset($_POST["actionSale"])) {
      </div>
      <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
      <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-      href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+     href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
      </div>
      </div>
      </form>

@@ -9,9 +9,6 @@ require 'top.php';
 <html>
 
 <head>
-	<style>
-		
-</style>
 	<title>Clothes</title>
 	<link rel="stylesheet" type="text/css" href="css/style_clothes.css">
 	<script src="js/cart.js" async></script>

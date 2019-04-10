@@ -7,7 +7,7 @@ include('dbh.inc.php');
 if(isset($_POST["action"])) {
   $query = "SELECT * FROM Clothes WHERE Gender = 'M'";
 
-  if(!preg_match("/^[a-zA-Z]*$/", $_POST['search'])) {
+  if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
     $query .= "
     AND Name LIKE '%%'";
   }
@@ -52,39 +52,53 @@ if(isset($_POST["action"])) {
   }
 
   $result = mysqli_query($conn,$query); 
+  $numRows = mysqli_num_rows($result);
   $output = '';
 
-  while($row = mysqli_fetch_assoc($result)) {
-   $output .= '
-   <div style="margin-bottom: 20px;" class="col-lg-3 col-md-6 col-sm-6">
-   <form method="post">
-   <div style="height: 400px;" class="card shadow text-center">
-   <div class="card-block">
-   <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
-   <div class="card-text">
-   '.$row['Brand'].'
-   </div>
-   <div class="card-text">
-   '.$row['Quantity'].' in stock
-   </div>
-   <div class="card-text">
-   <h3>£ '.$row['Price'].'</h3>
-   </div>
-   <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
-   <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-   </div>
-   </div>
-   </form>
-   </div>';
+  if($numRows > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+     $output .= '
+     <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+     <form method="post">
+     <div style="height: 400px;" class="card shadow text-center">
+     <div class="card-block">
+     <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
+     <div class="card-text">
+     '.$row['Brand'].'
+     </div>
+     <div class="card-text">
+     '.$row['Quantity'].' in stock
+     </div>
+     <div class="card-text">
+     <h3>€ '.$row['Price'].'</h3>
+     </div>
+     <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
+     <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+     </div>
+     </div>
+     </form>
+     </div>';
+   }
+   echo $output;
  }
+ else {
+  if(!empty($_POST['search'])) {
+    $output .= 'No items found by ' . $_POST['search'] . ' !';
+    echo $output;
+  }
+  else {
+    $output .= 'No items found!';
+    echo $output;
 
- echo $output;
+  }
+}
+
 }
 else if (isset($_POST["actionWomen"])) {
   $query = "
   SELECT * FROM Clothes WHERE Gender = 'F'";
 
-  if(!preg_match("/^[a-zA-Z]*$/", $_POST['search'])) {
+  if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
     $query .= "
     AND Name LIKE '%%'";
   }
@@ -130,33 +144,47 @@ else if (isset($_POST["actionWomen"])) {
   }
 
   $result = mysqli_query($conn,$query); 
+  $numRows = mysqli_num_rows($result);
   $output = '';
-  while($row = mysqli_fetch_assoc($result)) {
-   $output .= '
-   <div style="margin-bottom: 20px;" class="col-md-3 col-sm-6">
-   <form method="post">
-   <div style="height: 400px;" class="card shadow text-center">
-   <div class="card-block">
-   <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
-   <div class="card-text">
-   '.$row['Brand'].'
-   </div>
-   <div class="card-text">
-   '.$row['Quantity'].' in stock
-   </div>
-   <div class="card-text">
-   <h3>£ '.$row['Price'].'</h3>
-   </div>
-   <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
-   <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-   </div>
-   </div>
-   </form>
-   </div>';
+
+  if($numRows > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+     $output .= '
+     <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+     <form method="post">
+     <div style="height: 400px;" class="card shadow text-center">
+     <div class="card-block">
+     <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
+     <div class="card-text">
+     '.$row['Brand'].'
+     </div>
+     <div class="card-text">
+     '.$row['Quantity'].' in stock
+     </div>
+     <div class="card-text">
+     <h3>€ '.$row['Price'].'</h3>
+     </div>
+     <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
+     <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" href="#" class="btn btn-success">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+     </div>
+     </div>
+     </form>
+     </div>';
+   }
+   echo $output;
  }
+ else {
+  if(!empty($_POST['search'])) {
+    $output .= 'No items found by ' . $_POST['search'] . ' !';
+    echo $output;
+  }
+  else {
+    $output .= 'No items found!';
+    echo $output;
 
+  }
+}
 
- echo $output;
 }
 
 ?>

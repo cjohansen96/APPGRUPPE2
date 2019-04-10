@@ -185,6 +185,11 @@ background-size: cover;
   	$('#error-mail span').text("Invalid mail");
   	$('#error-mail span').addClass('form-error');
   }
+  if(/invalidtlf/.test(loc) ) {
+  	$('#reg-tlf').addClass('input-error');
+  	$('#error-tlf span').text("Invalid tlf");
+  	$('#error-tlf span').addClass('form-error');
+  }
   if(/uppercase/.test(loc) ) {
   	$('#reg-pwd').addClass('input-error');
   	$('#error-pwd span').text("Password needs atleast one uppercase!");

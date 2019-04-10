@@ -10,12 +10,11 @@ if(isset($_POST['save-submit'])) {
   $tlfNumber = $_POST['tlf'];
 
 // Validation
-  /*
-  	if (empty($name) || empty($lastName) || empty($email) || empty($tlf)) {
-  		header("Location: ../profile.php?error=emptyfields");
-      exit();
-  	}
-    */
+  
+  if (empty($name) || empty($lastName) || empty($email) || empty($tlfNumber)) {
+    header("Location: ../profile.php?errorprofile=emptyfields");
+    exit();
+  }
   	if (!preg_match("/^[a-zA-ZæøåÆØÅ]*$/", $name)) {
     	header("Location: ../profile.php?errorprofile=invalidfname");
     	exit();

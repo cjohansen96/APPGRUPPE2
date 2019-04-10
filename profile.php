@@ -256,6 +256,14 @@ if ($resultCheck > 0) {
   	if(/errorprofile/.test(loc) ) {
   		$('#editProfile').addClass('show');
 
+  		if(/emptyfields/.test(loc) ) {
+  			$('#fname').addClass('input-error');
+  			$('#lname').addClass('input-error');
+  			$('#email').addClass('input-error');
+  			$('#tlf').addClass('input-error');
+  			alert("Fill in all fields!");
+  		}
+
   		if(/invalidfname/.test(loc) ) {
   			$('#fname').addClass('input-error');
   			$('#error-fname label').text("Invalid first name");

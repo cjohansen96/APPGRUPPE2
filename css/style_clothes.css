@@ -18,3 +18,14 @@
     outline: none;
     border: none;
 }
+#clearbtn{ 
+	background-color: grey; 
+	border:none; 
+	color: white; 
+	margin-bottom: 10px; 
+} 
+#clearbtn:hover{ 
+	background-color: #FB8122; 
+	border:none; 
+	color: #1D2228; 
+}

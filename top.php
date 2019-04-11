@@ -29,23 +29,23 @@ require 'modal.php';
 
           <li class="dropdown" style="padding-right: 10px;">
             <a href="#"  data-toggle="dropdown" style="text-decoration: none;"><h2><a href="mens.php?clothes" style="text-decoration: none;">MEN </a></h2></a>
-            <ul class="dropdown-menu text-center navbarbgclr">
+            <ul class="dropdown-menu navbarbgclr">
               <li><a href="mens.php?clothes=Tshirt">T-shirts</a></li>
               <li><a href="mens.php?clothes=Sweater">Sweaters</a></li>
               <li><a href="mens.php?clothes=Jeans">Jeans</a></li>
             </ul>
           </li> 
-          <li class="dropdown">
+          <li class="dropdown" style="padding-right: 10px;">
             <a href="#" data-toggle="dropdown" style="text-decoration: none;"><h2><a href="womens.php?clothes" style="text-decoration: none;"> WOMEN</a></h2></a>
-            <ul class="dropdown-menu text-center navbarbgclr">
+            <ul class="dropdown-menu navbarbgclr">
               <li><a href="womens.php?clothes=Tshirt">T-shirts</a></li>
               <li><a href="womens.php?clothes=Sweater">Sweaters</a></li>
               <li><a href="womens.php?clothes=Jeans">Jeans</a></li>
             </ul>
           </li>
-
-
-          <h2><a href="sale.php" style="text-decoration: none; color: #ff165f;">&nbsp; SALE </a></h2>
+          <li>
+            <a href="sale.php" style="text-decoration: none;"> <h2 style="color: #ff165f;"> SALE </h2></a>
+          </li>
         </ul>
         <!-- dropdown for cart and login for smaller screens -->
         <?php
@@ -69,12 +69,7 @@ require 'modal.php';
 
       </ul>
     </div>
-    <div id="searchbar">
-      <form class="form-inline" action="/action_page.php">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-default" type="submit"> <span class="fas fa-search"></span> </button>
-      </form>
-    </div>
+    
 
 
 

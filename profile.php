@@ -7,6 +7,7 @@ if(!isset($_SESSION['customerId'])){
 	exit();
 }
 
+/* Spørring for å hente brukerinformasjon */
 $userArray = array();
 
 $id = $_SESSION['customerId'];
@@ -31,6 +32,20 @@ $quizTaken = false;
 
 if ($resultCheck > 0) {
 	$quizTaken = true;
+}
+
+/* Spørring for å sjekke om refer a friend er gjort */
+
+$query = "SELECT C.IdCustomer AS Cid, C.First_Name, C.Email, O.IdOrder, O.IdCustomer, RF.refereId AS Rid, RF.Email, RF.IdCustomer AS Rfid FROM Customer AS C INNER JOIN Orders AS O ON C.IdCustomer = O.IdCustomer INNER JOIN Refere_Friend AS RF ON C.Email = RF.Email";
+
+$result = mysqli_query($conn,$query);
+
+$friendRefered = false;
+while ($row = mysqli_fetch_assoc($result)) 
+{
+	if($row['Rfid'] == $id) {
+		$friendRefered = true;
+	}
 }
 
 ?>
@@ -163,8 +178,9 @@ if ($resultCheck > 0) {
 		<!--Edit password content -->
 		<div class="row">
 			<div class="col-sm text-center">
+				<h5 id="refer-text"></h5> <br>
 				<p>
-					<a class="btn btn-secondary editbtn" data-toggle="collapse" href="#referFriend" role="button" aria-expanded="false" 	aria-controls="	collapseExample">
+					<a id="refer-button" class="btn btn-secondary editbtn" data-toggle="collapse" href="#referFriend" role="button" aria-expanded="false" 	aria-controls="	collapseExample">
 						REFER A FRIEND
 					</a>
 				</p>
@@ -173,15 +189,28 @@ if ($resultCheck > 0) {
 
 		<!-- Collapse form for refering a friend -->
 		<div class="collapse" id="referFriend">
-			<form action="includes/edit-pwd.inc.php" class="text-center" method="POST">
+			<form action="includes/refer_friend.inc.php" class="text-center" method="POST">
 				<p> Refer a friend and get 30% cupon on any clothes you want! </p>
+				<h4> Here is how: </h4>
+				<p>
+					<a class="btn btn-secondary editbtn" data-toggle="collapse" href="#referHelp" role="button" aria-expanded="false" 	aria-controls="	collapseExample">
+						Steps
+					</a>
+				</p>
+				<div class="collapse" id="referHelp">
+				<p>	Step 1: Type in your friends email.</p>
+				<p>	Step 2: Make your friend register on the site.</p>
+				<p>	Step 3: Make your friend order something on the site</p>
+				<p>	Step 4: When step 1,2,3 is done you will get a cupon option on the checkout site!</p>
+				<p>	Step 5: Enjoy 30% off!!</p>
+				</div>
 				<div id="error-oldpass"> 
 					<span>Your friends email:</span>
 				</div>
-				<input id="oldpass" type="password" name="old-pwd"> <br>
+				<input  type="text" name="email"> <br>
 
-				<button type="submit" class="btn btn-secondary editbtn" name="pwd-submit">Refer
-				</button> <br> <br>
+				<button type="submit" class="btn btn-secondary editbtn" name="refer_submit">Refer
+				</button> <br> <br> 
 			</form>
 		</div>
 
@@ -210,6 +239,12 @@ if ($resultCheck > 0) {
 	if (quizTaken) {
 		$('#quiz-button').addClass('disabled');
 		$('#quiz-text').text('You have already taken this monthly quiz');
+	}
+
+	var friendRefered = '<?php echo $friendRefered ?>';
+	if (friendRefered) {
+		$('#refer-button').addClass('disabled');
+		$('#refer-text').text('You have already refered your friend!');
 	}
 
   	var loc = window.location.href; // returns the full URL

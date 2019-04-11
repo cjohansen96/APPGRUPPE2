@@ -29,3 +29,9 @@
 	border:none; 
 	color: #1D2228; 
 }
+
+@media (max-width: 767.98px) {
+	#bannerimg{
+		display: none;
+	}
+}

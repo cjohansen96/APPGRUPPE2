@@ -17,7 +17,13 @@ else {
 		<link rel="stylesheet" type="text/css" href="css/style_clothes.css">
 	</head>
 	<body>   <!-- Page Content -->
+
+
+
 		<div class="container">
+			<div class="row-fluid">
+				<img src="Bilder/men-banner.png" class="img-fluid" id="bannerimg">
+			</div>
 			<div class="row">
 				<div class="col-md-3">  
 					<div class="list-group">
@@ -27,29 +33,29 @@ else {
 
 						<div class="list-group text-center">
 
-						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
-							Search <i style="font-size: 0.8em" class="fas fa-search"></i>
-						</a>
-						<div class="collapse" id="collapseSearch">		
-							<span>Search:</span>
-							<input id="search">
-							<button style="margin-top: 5px; width: 70px;" class="search_submit btn btn-primary"><span class="fas fa-search"></span></button>
-						</div>
+							<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
+								Search <i style="font-size: 0.8em" class="fas fa-search"></i>
+							</a>
+							<div class="collapse" id="collapseSearch">		
+								<span>Search:</span>
+								<input id="search">
+								<button style="margin-top: 5px; width: 70px;" class="search_submit btn btn-primary"><span class="fas fa-search"></span></button>
+							</div>
 						</div> 
 
 						<div class="list-group text-center">
 
-						<a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false" aria-controls="collapsePrice">
-							Price <i style="font-size: 0.8em" class="fas fa-euro-sign"></i>
-						</a>
-						<div class="collapse" id="collapsePrice">		
-							<span>Min price:</span>
-							<input id="minimum_price" value="1">
-							<br>
-							<span>Max price:</span>
-							<input id="maximum_price" value="1000">
-							<button style="margin-top: 5px;" class="price_submit btn btn-primary">Submit</button>
-						</div>
+							<a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false" aria-controls="collapsePrice">
+								Price <i style="font-size: 0.8em" class="fas fa-euro-sign"></i>
+							</a>
+							<div class="collapse" id="collapsePrice">		
+								<span>Min price:</span>
+								<input id="minimum_price" value="1">
+								<br>
+								<span>Max price:</span>
+								<input id="maximum_price" value="1000">
+								<button style="margin-top: 5px;" class="price_submit btn btn-primary">Submit</button>
+							</div>
 						</div> 
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
@@ -150,7 +156,6 @@ else {
 					</div>
 				</div>
 			</div>
-
 		</div>
 
 
@@ -212,9 +217,9 @@ else {
 				var color = get_filter('color');
 				var size = get_filter('size');
 
-  				$("#search").val("");
-  				$("#minimum_price").val("1");
-  				$("#maximum_price").val("1000");
+				$("#search").val("");
+				$("#minimum_price").val("1");
+				$("#maximum_price").val("1000");
 
 				for (var i = 0; i < category.length; i++) {
 					$("input[value='" + category[i] + "']").prop('checked', false);

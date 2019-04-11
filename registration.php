@@ -50,7 +50,7 @@ background-size: cover;
 					?>
 
 					<div id="error-lname"> 
-						<span>Last-name</span>
+						<span>Last-name:</span>
 					</div>
 
 					<?php
@@ -78,7 +78,7 @@ background-size: cover;
 					?>
 
 					<div id="error-tlf"> 
-						<span>Phone number</span>
+						<span>Phone number:</span>
 					</div>
 
 					<?php

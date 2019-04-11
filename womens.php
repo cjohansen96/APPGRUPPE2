@@ -18,6 +18,9 @@ else {
 	</head>
 	<body>   <!-- Page Content -->
 		<div class="container">
+			<div class="row-fluid">
+				<img src="Bilder/women-banner.png" class="img-fluid" id="bannerimg">
+			</div>
 			<div class="row">
 				<div class="col-md-3">  
 					<div class="list-group">

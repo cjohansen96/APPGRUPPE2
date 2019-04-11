@@ -253,11 +253,13 @@ else if (isset($_POST["actionSale"])) {
 
   if($numRows > 0) {
     while($row = mysqli_fetch_assoc($result)) {
+      $sale = $row['New_Price']/$row['Price']*100;
      $output .= '
      <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
      <form method="post">
-     <div style="height: 400px;" class="card shadow text-center">
+     <div style="height: 420px;" class="card shadow text-center">
      <div class="card-block">
+     <h3 style="position:absolute; color:#ff165f;">-'.round($sale).'%</h3>
      <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
      <div class="card-text">
      '.$row['Brand'].'
@@ -266,7 +268,8 @@ else if (isset($_POST["actionSale"])) {
      '.$row['Quantity'].' in stock
      </div>
      <div class="card-text">
-     <h3>€ '.$row['New_Price'].'</h3>
+     <h3 style="color:#ff165f;">€ '.$row['New_Price'].'</h3>
+     <p style="color:grey; text-decoration:line-through;">€ '.$row['Price'].'</p>
      </div>
      <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
      <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 

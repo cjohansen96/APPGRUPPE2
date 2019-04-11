@@ -6,7 +6,8 @@ include('dbh.inc.php');
 
 
 if(isset($_POST["action"])) {
-   $query = "SELECT * FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'M'";
+   /*$query = "SELECT * FROM Clothes WHERE Gender = 'M'";*/
+   $query = "SELECT Clothes.IdClothes as Id, Name, Category, Price, Brand, Gender, Quantity, Color, Size, ProductImage FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'M'";
 
   if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
     $query .= "
@@ -80,7 +81,7 @@ if(isset($_POST["action"])) {
      <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" href class="form-control" value=""/>
 
      <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-      href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button" type ="submit">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+      href="cart.php?id='.$row['Id'].'" class="btn btn-success" role="button" type ="submit">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
 
 
      </div>
@@ -104,7 +105,7 @@ if(isset($_POST["action"])) {
 
 }
 else if (isset($_POST["actionWomen"])) {
-	$query = "SELECT * FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'F'";
+   $query = "SELECT Clothes.IdClothes as Id, Name, Category, Price, Brand, Gender, Quantity, Color, Size, ProductImage FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'F'";
 
   if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
     $query .= "
@@ -174,7 +175,7 @@ else if (isset($_POST["actionWomen"])) {
      </div>
      <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
      <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-      href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+      href="cart.php?id='.$row['Id'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
      </div>
      </div>
      </form>

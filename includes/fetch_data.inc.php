@@ -1,300 +1,65 @@
 <?php
-
-//fetch_data.php
 session_start();
-include('dbh.inc.php');
+require 'dbh.inc.php';
+if(isset($_POST['refer_submit'])){
+	$id = $_SESSION['email'];
+	$customerid = $_SESSION['customerId'];
+	if($id === $_POST['email']){
+		header("Location: ../profile.php?error=youremail");
+		exit();
+	}
+	else{
 
-if(isset($_GET['status']) & !empty($_GET['status'])){ 
-      if($_GET['status'] == 'success'){
-        echo "<div class=\"alert alert-success\" role=\"alert\">Item Successfully Added to Cart</div>";
-      }elseif ($_GET['status'] == 'incart') {
-        echo "<div class=\"alert alert-info\" role=\"alert\">Item is Already Exists in Cart</div>";
-      }elseif ($_GET['status'] == 'failed') {
-        echo "<div class=\"alert alert-danger\" role=\"alert\">Failed to Add item, try to Add Again</div>";
-      }
-  }
+		$email = isset($_POST['email']) ? $_POST['email'] : ''; 
+	 	
+		// henter ut emailene fra refer_friend tabellen.
+		$SQLreferStatement = "SELECT Email FROM Refere_Friend";
+		$referResult = mysqli_query($conn,$SQLreferStatement);
+		$referArray = array();
+		$j = 0;
+		while($row = mysqli_fetch_assoc($referResult)){
+			$referArray[$j] = $row;
+			$j++;
+		}
+		
+		//Sjekker om emailen allerede ligger i refer_tabellen. 
+		$referExists = false;
+		foreach ($referArray as $key => $value) {
+			foreach ($value as $relationship => $mail) {
+				if($mail == $email){
+						$referExists = true;
+				}
+			}
+		}
 
-
-if(isset($_POST["action"])) {
-  $query = "SELECT * FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'M'";
-
-  if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
-    $query .= "
-    AND Name LIKE '%%'";
-  }
-
-  else if(isset($_POST["search"]) && !empty($_POST["search"])) {
-    $query .= "
-    AND Name LIKE '%".$_POST["search"]."%'";
-  }
-
-  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"])){
-    $query .= "
-    AND Price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
-    ";
-  }
-
-  if(isset($_POST["category"]))  {
-    $category_filter = implode("','", $_POST["category"]);
-    $query .= "
-    AND Category IN('".$category_filter."')
-    ";
-  }
-
-  if(isset($_POST["brand"])) {
-    $brand_filter = implode("','", $_POST["brand"]);
-    $query .= "
-    AND Brand IN('".$brand_filter."')
-    ";
-  }
-
-  if(isset($_POST["color"]))  {
-    $color_filter = implode("','", $_POST["color"]);
-    $query .= "
-    AND Color IN('".$color_filter."')
-    ";
-  }
-
-  if(isset($_POST["size"]))  {
-    $size_filter = implode("','", $_POST["size"]);
-    $query .= "
-    AND Size IN('".$size_filter."')
-    ";
-  }
-
-
-  $result = mysqli_query($conn,$query); 
-  $numRows = mysqli_num_rows($result);
-  $output = '';
-
-
-
-  if($numRows > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-     $output .= '
-     <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-     <form method="post" action="cart.php">
-     <div style="height: 400px;" class="card shadow text-center">
-     <div class="card-block">
-     <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
-     <div class="card-text">
-     '.$row['Brand'].'
-     </div>
-     <div class="card-text">
-     '.$row['Quantity'].' in stock
-     </div>
-     <div class="card-text">
-     <h3>€ '.$row['Price'].'</h3>
-     </div>
-     <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
-     <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-     href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button" type ="submit">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-
-
-     </div>
-     </div>
-     </form>
-     </div>';
-   }
-   echo $output;
- }
- else {
-  if(!empty($_POST['search'])) {
-    $output .= 'No items found by ' . $_POST['search'] . ' !';
-    echo $output;
-  }
-  else {
-    $output .= 'No items found!';
-    echo $output;
-
-  }
-}
-
-}
-else if (isset($_POST["actionWomen"])) {
-  $query = "SELECT * FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'F'";
-
-  if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
-    $query .= "
-    AND Name LIKE '%%'";
-  }
-
-  else if(isset($_POST["search"]) && !empty($_POST["search"])) {
-    $query .= "
-    AND Name LIKE '%".$_POST["search"]."%'";
-  }
-
-  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
-  {
-    $query .= "
-    AND Price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
-    ";
-  }
-
-  if(isset($_POST["category"]))  {
-    $category_filter = implode("','", $_POST["category"]);
-    $query .= "
-    AND Category IN('".$category_filter."')
-    ";
-  }
-
-  if(isset($_POST["brand"])) {
-    $brand_filter = implode("','", $_POST["brand"]);
-    $query .= "
-    AND Brand IN('".$brand_filter."')
-    ";
-  }
-
-  if(isset($_POST["color"]))  {
-    $color_filter = implode("','", $_POST["color"]);
-    $query .= "
-    AND Color IN('".$color_filter."')
-    ";
-  }
-
-  if(isset($_POST["size"]))  {
-    $size_filter = implode("','", $_POST["size"]);
-    $query .= "
-    AND Size IN('".$size_filter."')
-    ";
-  }
-
-  $result = mysqli_query($conn,$query); 
-  $numRows = mysqli_num_rows($result);
-  $output = '';
-
-  if($numRows > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-     $output .= '
-     <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-     <form method="post" action="">
-     <div style="height: 400px;" class="card shadow text-center">
-     <div class="card-block">
-     <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
-     <div class="card-text">
-     '.$row['Brand'].'
-     </div>
-     <div class="card-text">
-     '.$row['Quantity'].' in stock
-     </div>
-     <div class="card-text">
-     <h3>€ '.$row['Price'].'</h3>
-     </div>
-     <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
-     <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-     href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-     </div>
-     </div>
-     </form>
-     </div>';
-   }
-   echo $output;
- }
- else {
-  if(!empty($_POST['search'])) {
-    $output .= 'No items found by ' . $_POST['search'] . ' !';
-    echo $output;
-  }
-  else {
-    $output .= 'No items found!';
-    echo $output;
-
-  }
-}
+			//legger den nye mailen i customer tabellen, og den gamle blir lagt over i refer tabellen i db
+			if($referExists === false){
+				$sql = "INSERT INTO Refere_Friend(IdCustomer, Email) VALUES (?,?);";
+				$stmt = mysqli_stmt_init($conn);
+				if(!mysqli_stmt_prepare($stmt, $sql)){
+					header("Location: ../profile.php?refereerror=sqlerror");
+					exit();
+				}
+				else {
+					mysqli_stmt_bind_param($stmt, "is", $customerid,$email);
+					mysqli_stmt_execute($stmt);
+					 header("Location: ../profile.php?referesuccsess=emailadded");
+					exit();
+				
+				}	
+				
+			}
+				//mailen finens fra før i refer_friend tabell
+			elseif($customerExists === true && $referExists === true){
+				header("Location: ../profile.php?error=refertwice");;
+			}
+				//mailen finnes ikke i customer tabellen
+			else{
+				header("Location: ../profile.php?error=emaildonotexist");
+			}
+	}
 
 }
 
-/* Fetch data for salg */
-else if (isset($_POST["actionSale"])) {
-  $query = "
-  SELECT Clothes.*, Sale.* FROM Clothes INNER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes";
 
-  if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
-    $query .= "
-    AND Name LIKE '%%'";
-  }
-
-  else if(isset($_POST["search"]) && !empty($_POST["search"])) {
-    $query .= "
-    AND Name LIKE '%".$_POST["search"]."%'";
-  }
-
-  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
-  {
-    $query .= "
-    AND Price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
-    ";
-  }
-
-  if(isset($_POST["category"]))  {
-    $category_filter = implode("','", $_POST["category"]);
-    $query .= "
-    AND Category IN('".$category_filter."')
-    ";
-  }
-
-  if(isset($_POST["brand"])) {
-    $brand_filter = implode("','", $_POST["brand"]);
-    $query .= "
-    AND Brand IN('".$brand_filter."')
-    ";
-  }
-
-  if(isset($_POST["color"]))  {
-    $color_filter = implode("','", $_POST["color"]);
-    $query .= "
-    AND Color IN('".$color_filter."')
-    ";
-  }
-
-  if(isset($_POST["size"]))  {
-    $size_filter = implode("','", $_POST["size"]);
-    $query .= "
-    AND Size IN('".$size_filter."')
-    ";
-  }
-
-  $result = mysqli_query($conn,$query); 
-  $numRows = mysqli_num_rows($result);
-  $output = '';
-
-  if($numRows > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-     $output .= '
-     <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-     <form method="post">
-     <div style="height: 400px;" class="card shadow text-center">
-     <div class="card-block">
-     <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
-     <div class="card-text">
-     '.$row['Brand'].'
-     </div>
-     <div class="card-text">
-     '.$row['Quantity'].' in stock
-     </div>
-     <div class="card-text">
-     <h3>€ '.$row['New_Price'].'</h3>
-     </div>
-     <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" class="form-control" value="1"/>
-     <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-     href="cart.php?id='.$row['IdClothes'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
-     </div>
-     </div>
-     </form>
-     </div>';
-   }
-   echo $output;
- }
- else {
-  if(!empty($_POST['search'])) {
-    $output .= 'No items found by ' . $_POST['search'] . ' !';
-    echo $output;
-  }
-  else {
-    $output .= 'No items found!';
-    echo $output;
-
-  }
-}
-
-}
+	?>

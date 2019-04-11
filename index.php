@@ -58,14 +58,11 @@ require 'slideshow.php';
   background-size: cover;
   -o-background-size: cover; display: flex; flex-direction: column; text-align: center; justify-content: center; align-items: center; margin-bottom: 20px;">
   <div class="row" >
-        <!--
-   <a href="#"><img src="Bilder/sale-banner4.webp" style="width: 100%; class="img-fluid" alt="Sales banner"></a>
- -->
  <div>
    <a class="btn btn-danger btn-lg text-center mx-5" role="button" href="mens.php?clothes">SHOP MEN ></a>
  </div>
- <div >
-   <a class="btn btn-danger btn-lg text-center mx-5" role="button" href="mens.php?clothes">SHOP WOMEN ></a>
+ <div>
+   <a class="btn btn-danger btn-lg text-center mx-5" role="button" href="womens.php?clothes">SHOP WOMEN ></a>
  </div>
 </div>
 </div>

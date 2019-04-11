@@ -81,7 +81,7 @@ if(isset($_POST["action"])) {
      <input style="width: 80%; margin-left: 10%; " type="text" name="quantity" href class="form-control" value=""/>
 
      <a style="margin-top: 10px; margin-bottom: 10px; background-color:#FB8122; border: none; color:black;" 
-      href="cart.php?id='.$row['Id'].'" class="btn btn-success" role="button" type ="submit">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
+      href="cart.php?id='.$row['Id'].'" class="btn btn-success" role="button">Add to cart <span class="fas fa-cart-arrow-down"></span></a>
 
 
      </div>
@@ -253,13 +253,14 @@ else if (isset($_POST["actionSale"])) {
 
   if($numRows > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-      $sale = $row['New_Price']/$row['Price']*100;
+      $diff = $row['Price']-$row['New_Price'];
+      $sale = round($diff/$row['Price']*100);
      $output .= '
      <div style="margin-bottom: 20px;" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
      <form method="post">
      <div style="height: 420px;" class="card shadow text-center">
      <div class="card-block">
-     <h3 style="position:absolute; color:#ff165f;">-'.round($sale).'%</h3>
+     <h3 style="position:absolute; color:#ff165f;">-'.$sale.'%</h3>
      <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
      <div class="card-text">
      '.$row['Brand'].'

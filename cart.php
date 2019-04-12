@@ -46,19 +46,20 @@ if(isset($_GET['remove']) & !empty($_GET['remove'])){
 
 /* Spørring for å sjekke om refer a friend er gjort */
 
+$friendRefered = false;
+if (isset($_SESSION['customerId'])) {
 $idCustomer = $_SESSION['customerId'];
 $query = "SELECT C.IdCustomer AS Cid, C.First_Name, C.Email, O.IdOrder, O.IdCustomer, RF.refereId AS Rid, RF.Email, RF.IdCustomer AS Rfid FROM Customer AS C INNER JOIN Orders AS O ON C.IdCustomer = O.IdCustomer INNER JOIN Refere_Friend AS RF ON C.Email = RF.Email";
 
 $result = mysqli_query($conn,$query);
 
-$friendRefered = false;
 while ($row = mysqli_fetch_assoc($result)) 
 {
 	if($row['Rfid'] == $idCustomer) {
 		$friendRefered = true;
 	}
 }
-
+}
 if (isset($_POST['checkout'])) {
         $sql = "INSERT INTO Orders (IdCustomer, IdClothes, Sum_Pris) VALUES (?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
@@ -154,5 +155,8 @@ $test = array("0" => "11");
 	if (friendRefered) {
 		$('#refer-button').addClass('btn btn-warning');
 		$('#refer-button').text('30% cupon');
+	}
+	if (!friendRefered) {
+		$('#refer-button').remove('button');
 	}
 </script>

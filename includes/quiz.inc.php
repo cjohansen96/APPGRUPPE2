@@ -33,7 +33,7 @@ if (isset($_POST['quiz-submit'])) {
 		mysqli_stmt_bind_param($stmt, "iii", $score, $category, $id);
 
 		mysqli_stmt_execute($stmt);
-		header("Location: ../profile.php?quizsubmitted");
+		header("Location: ../profile.php?quizsubmitted&score=$score");
 		exit();
 	}
 

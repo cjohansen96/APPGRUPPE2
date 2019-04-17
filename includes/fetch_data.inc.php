@@ -19,7 +19,7 @@ if(isset($_POST["action"])) {
     AND Name LIKE '%".$_POST["search"]."%'";
   }
 
-  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"])){
+  if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) || !empty($_POST["maximum_price"])){
     $query .= "
     AND Price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
     ";
@@ -69,7 +69,7 @@ if(isset($_POST["action"])) {
      <div class="card-block">
      <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
      <div class="card-text">
-     '.$row['Brand'].'
+     '.$row['Brand'].' | '.$row['Category'].'
      </div>
      <div class="card-text">
      '.$row['Quantity'].' in stock
@@ -104,6 +104,7 @@ if(isset($_POST["action"])) {
 }
 
 }
+
 else if (isset($_POST["actionWomen"])) {
    $query = "SELECT Clothes.IdClothes as Id, Name, Category, Price, Brand, Gender, Quantity, Color, Size, ProductImage FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'F'";
 
@@ -165,7 +166,7 @@ else if (isset($_POST["actionWomen"])) {
      <div class="card-block">
      <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
      <div class="card-text">
-     '.$row['Brand'].'
+     '.$row['Brand'].' | '.$row['Category'].'
      </div>
      <div class="card-text">
      '.$row['Quantity'].' in stock
@@ -260,10 +261,10 @@ else if (isset($_POST["actionSale"])) {
      <form method="post">
      <div style="height: 420px;" class="card shadow text-center">
      <div class="card-block">
-     <h3 style="position:absolute; color:#ff165f;">-'.$sale.'%</h3>
+     <h3 style="position:absolute; color:#ff165f;">-'.$sale.'%</h3> 
      <img src="Bilder/clothes/'. $row['ProductImage'].'" alt="" class="img-fluid" style="height: 200px;">
      <div class="card-text">
-     '.$row['Brand'].'
+     '.$row['Brand'].' | '.$row['Category'].'
      </div>
      <div class="card-text">
      '.$row['Quantity'].' in stock

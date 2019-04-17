@@ -3,7 +3,7 @@ session_start();
 require 'includes/dbh.inc.php';
 
 if(!isset($_SESSION['customerId'])){
-	header("location: ../index.php");
+	header("Location: ../APPGRUPPE2/index.php");
 	exit();
 }
 

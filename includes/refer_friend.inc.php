@@ -34,6 +34,11 @@ if(isset($_POST['refer_submit'])){
 			}
 		}
 
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    		header("Location: ../profile.php?refererror=invalidemail");
+    		exit();
+  		}
+
 			//legger den nye mailen i customer tabellen, og den gamle blir lagt over i refer tabellen i db
 			if($referExists === false){
 				$sql = "INSERT INTO Refere_Friend(IdCustomer, Email) VALUES (?,?);";

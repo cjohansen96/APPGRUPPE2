@@ -11,7 +11,8 @@
 		<title>Clothes</title>
 		<link rel="stylesheet" type="text/css" href="css/style_clothes.css">
 	</head>
-	<body>   <!-- Page Content -->
+	<body>   
+		<!-- Page Content -->
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">  
@@ -20,6 +21,7 @@
 
 						<button style="margin-top: 5px;" class="search_submit btn btn-primary clear_filter" id="clearbtn">Clear Filter <i style="font-size: 0.8em" class="fas fa-undo-alt"></i></button>
 
+						<!-- Filter søk -->
 						<div class="list-group text-center">
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
@@ -32,6 +34,7 @@
 						</div>
 						</div> 
 
+						<!-- Filter pris -->
 						<div class="list-group text-center">
 
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapsePrice" role="button" aria-expanded="false" aria-controls="collapsePrice">
@@ -47,6 +50,7 @@
 						</div>
 						</div> 
 
+						<!-- Filter category-->
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseCategory">
 
 							Category <i style="font-size: 0.8em" class="fas fa-book"></i>
@@ -70,6 +74,7 @@
 						</div>
 					</div>
 
+					<!-- Filter brand-->
 					<div class="list-group">
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseBrand" role="button" aria-expanded="false" aria-controls="collapseBrand">
 							Brand
@@ -94,6 +99,8 @@
 							?>
 						</div>
 					</div>
+
+					<!-- Filter color-->
 					<div class="list-group">
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseColor" role="button" aria-expanded="false" aria-controls="collapseColor">
 							Color
@@ -115,6 +122,8 @@
 							?> 
 						</div>
 					</div>
+
+					<!-- Filter size-->
 					<div class="list-group">
 						<a class="btn btn-primary" data-toggle="collapse" href="#collapseSizes" role="button" aria-expanded="false" aria-controls="collapseSizes">
 							Size
@@ -138,6 +147,7 @@
 					</div>
 				</div>
 
+				<!-- Content for klær -->
 				<div class="col-md-9">
 					<br />
 					<div class="row filter_data">
@@ -150,8 +160,8 @@
 
 
 		<script>
-		//Jquery code
-		$(document).ready(function(){ // Everything loads after the document is loaded.
+		//Jquery kode for filtrering
+		$(document).ready(function(){ 
 
 			filter_data();
 
@@ -165,12 +175,14 @@
 				var brand = get_filter('brand');
 				var color = get_filter('color');
 				var size = get_filter('size');
-				$.ajax({ //Ajax code
+
+				// Ajax kode
+				$.ajax({ 
 					url:"includes/fetch_data.inc.php",
 					method:"POST",
-					data:{actionSale:actionSale, search:search, minimum_price:minimum_price, maximum_price:maximum_price,category:category, brand:brand, color:color, size:size}, //Passing variables to fetch_data.inc.php
-					success:function(data){		//Sucsess callback function
-						$('.filter_data').html(data); // Pasting html data into the class filter_data
+					data:{actionSale:actionSale, search:search, minimum_price:minimum_price, maximum_price:maximum_price,category:category, brand:brand, color:color, size:size}, 
+					success:function(data){		
+						$('.filter_data').html(data); 
 					}
 				});
 			}
@@ -178,13 +190,13 @@
 			function get_filter(class_name)
 			{
 				var filter = [];
-				$('.'+class_name+':checked').each(function(){ //To retrieve only the selected options of select elements, use the :selected selector
+				$('.'+class_name+':checked').each(function(){ 
 					filter.push($(this).val());
 				});
 				return filter;
 			}
 
-			$('.common_selector').click(function(){ // A fuction that needs to run, when it is clicked
+			$('.common_selector').click(function(){ 
 				filter_data();
 			});
 

@@ -12,8 +12,7 @@ if (isset($_POST['reg-submit'])) {
   $passwordRepeat = $_POST['pwd-repeat'];
 
 
-  // Inndata validering av de forskjellige inndata bruker skriver inn i registrering skjema, mange forskjellige valideringer
-  // man kan ha, men jeg valgte de som jeg trodde var mest viktige for våres applikasjon.
+  // Inndatavalideringer
   if (empty($name) || empty($lastName) || empty($email) || empty($tlfNumber) || empty($password) || empty($passwordRepeat)) {
     header("Location: ../registration.php?error=emptyfields");
     exit();
@@ -57,8 +56,6 @@ if (isset($_POST['reg-submit'])) {
 
   else {
 
-    // Hvis brukeren ikke har gjort noen feil, så starter skritpet med å finne ut om email allerede er registrert.
-    // Bruker da prepared statments for å sikre at det ikke blir noen sqlinjections.
     $sql = "SELECT Email FROM Customer WHERE Email=?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -77,7 +74,7 @@ if (isset($_POST['reg-submit'])) {
         header("Location: ../registration.php?error=usertaken&mail=".$email);
         exit();
       }
-      // Hvis brukeren ikke eksisterer kan vi da begynne å sette inn brukeren i databasen med et hashed passord.
+      
       else {
         $sql = "INSERT INTO Customer (First_Name, Last_Name, Email, Phone, Password) VALUES (?, ?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);

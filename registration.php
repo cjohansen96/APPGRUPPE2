@@ -129,7 +129,7 @@ background-size: cover;
 <!-- Errorhandling med jquery(frontend). Visualisering for hva bruker har gjort feil -->
 <script>
 		$(function() {
-  var loc = window.location.href; // returns the full URL
+  var loc = window.location.href; // Retunerer full url
   if(/emptyfield/.test(loc) ) {
   	var fname = $('#reg-fname').val();
   	var lname = $('#reg-lname').val();

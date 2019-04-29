@@ -33,6 +33,7 @@ if ($resultCheck > 0) {
 
 /* Spørring for quiz */
 $sql = "SELECT * FROM CustomerScore WHERE Customer_IdCustomer = '$id' AND Category_IdCategory = 2";
+
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 $quizTaken = false;
@@ -241,7 +242,8 @@ while ($row = mysqli_fetch_assoc($result))
 </body>
 
 <script>
-	$(function() {
+
+	$(function() { // Funksjon for quiz
 	var quizTaken = '<?php echo $quizTaken ?>';
 	if (quizTaken) {
 		$('#quiz-button').addClass('disabled');
@@ -254,8 +256,8 @@ while ($row = mysqli_fetch_assoc($result))
 		$('#refer-text').text('You have already refered your friend!');
 	}
 
-  	var loc = window.location.href; // returns the full URL
-  	if(/errorpass/.test(loc) ) {
+  	var loc = window.location.href; // Retunerer urlen
+  	if(/errorpass/.test(loc) ) { // Inndatavalideringer -->
   		$('#editPassword').addClass('show');
 
   		if(/wrongpassword/.test(loc) ) {

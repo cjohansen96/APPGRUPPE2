@@ -1,12 +1,10 @@
 <?php
 
-//fetch_data.php
 session_start();
-include('dbh.inc.php');
+require 'dbh.inc.php';
 
-
+// Sjekker ajax kall for men
 if(isset($_POST["action"])) {
-   /*$query = "SELECT * FROM Clothes WHERE Gender = 'M'";*/
    $query = "SELECT Clothes.IdClothes as Id, Name, Category, Price, Brand, Gender, Quantity, Color, Size, ProductImage FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'M'";
 
   if(!preg_match("/^[A-Za-z ]+$/", $_POST['search']) || $_POST['search'] == "SELECT") {
@@ -59,7 +57,7 @@ if(isset($_POST["action"])) {
   $output = '';
 
 
-
+  // HTML output for mens
   if($numRows > 0) {
     while($row = mysqli_fetch_assoc($result)) {
      $output .= '
@@ -105,6 +103,7 @@ if(isset($_POST["action"])) {
 
 }
 
+// Sjekker AJAX kall for women
 else if (isset($_POST["actionWomen"])) {
    $query = "SELECT Clothes.IdClothes as Id, Name, Category, Price, Brand, Gender, Quantity, Color, Size, ProductImage FROM Clothes LEFT OUTER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes WHERE Sale.IdSale IS null AND Gender = 'F'";
 
@@ -157,6 +156,7 @@ else if (isset($_POST["actionWomen"])) {
   $numRows = mysqli_num_rows($result);
   $output = '';
 
+  // Output women
   if($numRows > 0) {
     while($row = mysqli_fetch_assoc($result)) {
      $output .= '
@@ -198,7 +198,7 @@ else if (isset($_POST["actionWomen"])) {
 
 }
 
-/* Fetch data for salg */
+// Sjekker AJAX kall for salg
 else if (isset($_POST["actionSale"])) {
   $query = "
   SELECT Clothes.*, Sale.* FROM Clothes INNER JOIN Sale ON Clothes.IdClothes = Sale.IdClothes";
@@ -252,6 +252,7 @@ else if (isset($_POST["actionSale"])) {
   $numRows = mysqli_num_rows($result);
   $output = '';
 
+  //Output for salg
   if($numRows > 0) {
     while($row = mysqli_fetch_assoc($result)) {
       $diff = $row['Price']-$row['New_Price'];

@@ -1,3 +1,4 @@
+<!-- Login modal for siden, brukes i top -->
 <div class="modal" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">

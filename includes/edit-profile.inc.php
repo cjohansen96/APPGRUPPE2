@@ -9,7 +9,7 @@ if(isset($_POST['save-submit'])) {
   $email = $_POST['mail'];
   $tlfNumber = $_POST['tlf'];
 
-// Validation
+// Inndatavalidering
   
   if (empty($name) || empty($lastName) || empty($email) || empty($tlfNumber)) {
     header("Location: ../profile.php?errorprofile=emptyfields");

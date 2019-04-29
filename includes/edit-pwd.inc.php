@@ -8,6 +8,7 @@ if (isset($_POST['pwd-submit'])) {
   $newPassword = $_POST['new-pwd'];
   $passwordRepeat = $_POST['pwd-repeat'];
 
+  //Inndatavalideringer
   if (empty($oldPassword) || empty($newPassword) || empty($passwordRepeat)) {
     header("Location: ../profile.php?errorpass=emptyfields");
     exit();

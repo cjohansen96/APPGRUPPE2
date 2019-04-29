@@ -7,6 +7,13 @@ if(!isset($_SESSION['customerId'])){
 	exit();
 }
 
+/* Hente score i en variabel */
+$customerScore = 0;
+
+if (isset($_GET['score'])) {
+	$customerScore = $_GET['score'];
+}
+
 /* Spørring for å hente brukerinformasjon */
 $userArray = array();
 
@@ -348,8 +355,16 @@ while ($row = mysqli_fetch_assoc($result))
   	}
 
   	if(/quizsubmitted/.test(loc)) {
-  			$('#success').addClass('form-success');
-  			$('h3').text("Quiz submitted!");
+  		var customerScore = '<?php echo $customerScore; ?>';
+  		$('#success').addClass('form-success');
+  		$('h3').text("Quiz submitted! Score = " + customerScore + "/5");
+
+  		if (customerScore == 5) {
+  			$('h3').text("Quiz submitted! Full score, " + customerScore + "/5" + " you are in the draw!");
+  		}
+  		else {
+  			$('h3').text("Quiz submitted! Score= " + customerScore + "/5" + " sorry, you are not cut for the draw!");
+  		}
 
   	}
   });

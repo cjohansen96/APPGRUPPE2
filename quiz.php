@@ -9,7 +9,7 @@ if(!isset($_SESSION['customerId'])){
 
 
 $id = $_SESSION['customerId'];
-$sql = "SELECT * FROM CustomerScore WHERE Customer_IdCustomer ='$id' AND Category_IdCategory = 2";
+$sql = "SELECT * FROM CustomerScore WHERE IdCustomer ='$id' AND IdCategory = 2";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 if ($resultCheck > 0) {
@@ -54,20 +54,20 @@ if ($resultCheck > 0) {
 			<div class="col-sm text-center">
 				<form  method="post" action="includes/quiz.inc.php">
 					<?php
-					$sql = "SELECT * FROM QuizQuestion WHERE Category_IdCategory = 2";
+					$sql = "SELECT * FROM QuizQuestion WHERE IdCategory = 2";
 					$result = mysqli_query($conn, $sql);
 					$counter = 1;
 
 					while ($row = mysqli_fetch_assoc($result)) {?>
 
 						<h5> <?php echo $row['Question'];?></h5>
-						<?php echo $row['Option 1'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Option 1'];?>"/>
+						<?php echo $row['Answer1'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Answer1'];?>"/>
 						<br/>
-						<?php echo $row['Option 2'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Option 2'];?>"/>
+						<?php echo $row['Answer2'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Answer2'];?>"/>
 						<br/>
-						<?php echo $row['Option 3'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Option 3'];?>"/>
+						<?php echo $row['Answer3'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Answer3'];?>"/>
 						<br/>
-						<?php echo $row['Option 4'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Option 4'];?>"/>
+						<?php echo $row['Answer4'];?> <input type="radio" name="ans_<?php echo $counter;?>" value="<?php echo $row['Answer4'];?>"/>
 						<br/> <br>
 						<?php 
 						$counter++;

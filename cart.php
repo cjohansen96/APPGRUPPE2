@@ -62,7 +62,7 @@ if (isset($_SESSION['customerId'])) {
 
 /* Hardkodet checkout bare for å se om ting funker */
 if (isset($_POST['checkout'])) {
-	$sql = "INSERT INTO Orders (IdCustomer, IdClothes, Sum_Pris) VALUES (?, ?, ?);";
+	$sql = "INSERT INTO Orders (IdCustomer, IdClothes, Total_Price) VALUES (?, ?, ?);";
 	$stmt = mysqli_stmt_init($conn);
 
 	if (!mysqli_stmt_prepare($stmt, $sql)) {

@@ -6,7 +6,7 @@ require 'dbh.inc.php';
 if (isset($_POST['quiz-submit'])) {
 	$score =0;
 
-	$sql = "SELECT * FROM QuizQuestion WHERE Category_IdCategory = 2";
+	$sql = "SELECT * FROM QuizQuestion WHERE IdCategory = 2";
 	$result = mysqli_query($conn, $sql);
 	$counter = 1;
 
@@ -19,7 +19,7 @@ if (isset($_POST['quiz-submit'])) {
 	}
 
 
-	$sql = "INSERT INTO CustomerScore (Score, Category_IdCategory, Customer_IdCustomer) VALUES (?, ?, ?);";
+	$sql = "INSERT INTO CustomerScore (Score, IdCategory, IdCustomer) VALUES (?, ?, ?);";
 	$stmt = mysqli_stmt_init($conn);
 
 	if (!mysqli_stmt_prepare($stmt, $sql)) {

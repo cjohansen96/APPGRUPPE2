@@ -1,8 +1,8 @@
 <?php
 
-$servername = "itfag.usn.no";
-$dBUsername = "h18gr2";
-$dBPassord = "pw2";
+$servername = "localhost";
+$dBUsername = "root";
+$dBPassord = "";
 $dBName = "h18grdb2";
 
 

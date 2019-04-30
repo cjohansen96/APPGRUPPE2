@@ -32,7 +32,7 @@ if ($resultCheck > 0) {
 }
 
 /* Spørring for quiz */
-$sql = "SELECT * FROM CustomerScore WHERE Customer_IdCustomer = '$id' AND Category_IdCategory = 2";
+$sql = "SELECT * FROM CustomerScore WHERE IdCustomer = '$id' AND IdCategory = 2";
 
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
